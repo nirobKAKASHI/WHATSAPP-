@@ -7,7 +7,7 @@ async function helpCommand(sock, chatId, channelLink) {
 ╔═══════════════════╗
    *🤖 ${settings.botName || 'Kaminari'}*  
    Version: *${settings.version || '1.0.0'}*
-   by ${settings.botOwner || 'Atharva'}
+   by ${settings.botOwner || 'IROTECH'}
    YT : ${global.ytch}
 ╚═══════════════════╝
 
@@ -144,11 +144,11 @@ Join our channel for updates:`;
                 image: imageBuffer,
                 caption: helpMessage,
                 contextInfo: {
-                    forwardingScore: 999,
-                    isForwarded: true,
+                    forwardingScore: 1,
+                    isForwarded: false,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'Kaminari by Mr Atharva',
+                        newsletterName: 'Kaminari by IROTECH',
                         serverMessageId: -1
                     }
                 }
@@ -158,11 +158,11 @@ Join our channel for updates:`;
             await sock.sendMessage(chatId, { 
                 text: helpMessage,
                 contextInfo: {
-                    forwardingScore: 999,
-                    isForwarded: true,
+                    forwardingScore: 1,
+                    isForwarded: false,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'Kaminari by Mr Atharva',
+                        newsletterName: 'Kaminari by IROTECH',
                         serverMessageId: -1
                     } 
                 }
