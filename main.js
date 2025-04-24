@@ -81,17 +81,17 @@ const textmakerCommand = require('./commands/textmaker');
 // Global settings
 global.packname = settings.packname;
 global.author = settings.author;
-global.channelLink = "https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A";
-global.ytch = "Mr Unique Hacker";
+global.channelLink = "https://chat.whatsapp.com/Lp4S32gSNyB3ePqqJwmOnS";
+global.ytch = "Null";
 
 // Add this near the top of main.js with other global configurations
 const channelInfo = {
     contextInfo: {
-        forwardingScore: 999,
-        isForwarded: true,
+        forwardingScore: 1,
+        isForwarded: false,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
+            newsletterName: 'Kaminari',
             serverMessageId: -1
         }
     }
