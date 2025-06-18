@@ -3,9 +3,6 @@ async function githubCommand(sock, chatId) {
 📁 *GitHub Repository:*
 https://github.com/yourusername/BeltahBot
 
-📺 *Official Channel:*
-https://youtube.com/@yourchannel
-
 _⭐ Star the repo if you love Beltah!_
 `;
 
