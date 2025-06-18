@@ -1,135 +1,92 @@
-🤖 Beltah Bot – WhatsApp Bot
+# ðŸ¤– Beltah Bot â€“ WhatsApp Bot
 
-**Beltah MD** ni mrembo wa command-based WhatsApp bot built on the powerful Baileys MD platform. It's packed with your favorite swag — from AI to texting games, chat auto-replies, and unmatched romantic chat vibes 💘.
+Beltah MD is a powerful customizable WhatsApp bot built on the KnightMD-MD framework. It provides a set of powerful features in a simple setup, with cool styles, AI-enhanced conversations, and multi-language responses.
 
-> 🔐 **Note:** This bot is fully locked to the number +254741819582 and operated by the **Beltah Team**.
-
----
-
-## ✨ Features
-
-✅ Supports Hinglish, Swahili, and Beltah slang  
-🧠 Smart chatbot with flirty, savage and creative responses  
-🔒 Owner-only Mode and Chatbot Lock  
-📥 Easy MP3 and YouTube Music Downloader  
-🛠️ Text Effects, Image Maker (Text Designer)  
-📛 Auto-replies and user memory system  
-🪄 Fun commands like pair, match, and spin  
-🕒 Live bot status with auto-restart and custom time UI  
-🔡 Timestamp-style message formatting  
+> âš ï¸ **Note:** This bot is fully locked to the number `+254741819582` and is owned by the Beltah team.
 
 ---
 
-## 🔧 Setup Instructions
+## âœ¨ Features
 
-### 1. Clone this repository
+ðŸ”¥ Supports Hinglish, Swahili, and English  
+ðŸ§  Chatbot (with both smart and romantic responses)  
+ðŸ” Owner mode and chatbot lock  
+ðŸ”„ Group/Private Chat Auto-Detect  
+ðŸŽ¨ Text Image Generator (text-maker styles)  
+ðŸ•µï¸ Anti-Badword and User memory system  
+ðŸ“¥ Download songs by title  
+ðŸ›¡ï¸ Stickers, audio, video and auto-resume from GDrive  
+ðŸ•™ Timestamped file message formatting
+
+---
+
+## âš™ï¸ Setup Instructions
+
 ```bash
-git clone https://github.com/username/beltah-whatsapp-bot
-cd beltah-md
+# 1. Clone this repository
+git clone https://github.com/username/BeltahBot-MD
+cd BeltahBot-MD
 
-2. Install dependencies
-
+# 2. Install dependencies
 npm install
 
-3. Update settings.js
-
-Make sure to configure your:
-
-ownerNumber
-
-botName
-
-prefix
-
-author
-
-sessionPath
-
-
+# 3. Update settings.js
+```
 
 ---
 
-👤 User Info
+## ðŸ‘¤ User Info
 
-This bot is locked to +254741819582. If anyone else attempts to install or run this bot, it will auto-reject with a loud warning. 🚫
-
+This bot is locked to +254741819582. If anyone else attempts to install or run this bot, it will automatically lock & stop running.
 
 ---
 
-💬 Chatbot Modes
+## ðŸ’¬ Chatbot Modes
 
-romantic – Flirty and sweet responses 💞
-
-polite – Formal, respectful convo 😇
-
-hype-ish – Similar to Aiywa Bot & slang 🔥
-
-igimo – Funny & cheeky street vibes 🤪
-
+- romantic â€“ flirty and sweet responses ðŸ’•  
+- polite â€“ formal, respectful tones ðŸ˜Š  
+- hype-ish â€“ Swahili + Kenyan Gen Z slang ðŸ¸  
+- igimo â€“ funny & cheeky street vibes ðŸ˜ˆ
 
 Switch modes using admin chatbot commands.
 
+---
+
+## ðŸ§ª Commands (Sample)
+
+```bash
+/chatbot on - turn on chatbot  
+/chatbot off - turn off chatbot  
+/mode romantic - enable flirty mode  
+/mode polite - clean polite mode  
+/sticker - turn image to sticker with auto crop  
+/yts name - song & video search  
+```
 
 ---
 
-📜 Commands (Sample)
+## ðŸ¤– GPT Branding
 
-/chatbot on   – Turn on chatbot  
-/chatbot off  – Turn off chatbot  
-/match @user  – Pair two users  
-/play <yt link / query> – Fetch audio via Axios  
-/textmaker <style> <text> – Stylish text design
+Enjoy the deepest custom Gen Z style still through the help of GPT and branding areas.
 
-
----
-
-🧬 GPT Branding
-
-Enjoy the deepest convo-like style all through the help script and branding areas.
-
+> Based on: KnightMD-MD  
+> Developer: Beltah Dev Team  
+> GPT Style AI: Enabled  
+> Axios used for image + song downloads  
+> Replaces multi-Audio + GIMP (if used)
 
 ---
 
-ℹ️ Bot Info
+## ðŸ†” Bot Info
 
-Bot Owner: Ishaq Ibrahim
-Bot Name: Beltah MD
-Server: RailWay, Offline/Online lock enabled
-Lang: Kiswahili, English
-
+**Bot Owner (static license):**  
+Message: +254 741 819 582  
+Server: Firebase, GPT-Owner Lock Enabled  
+Language: EN, SW, Hinglish
 
 ---
 
-📜 License
+## ðŸ“œ License
 
 This project is licensed under the MIT License.
-
-
----
-
-> ❤️ THIS README WAS generated with 💖 by Beltah Team. Stay correct, stay automated.
-
-
-
-
----
-
-🧐 Why Beltah?
-
-> “Sijui, all of the above maybe ni si she fine 😭
-Beltah the definition of only smart SLANG na fine.”
-
-When she responds, utajua.
-
-
-
-You're free to fork it, remix it, and pass her like a class. 🤌
-Just don’t be toxic, bro.
-
-Let us know if you want a downloadable .read file too — I'll format one and send it right away.
-
----
-
-Let me know if you want a dark-themed HTML or PDF version of this README — Beltah style 😎.
-
 
