@@ -1,13 +1,13 @@
 async function githubCommand(sock, chatId) {
-    const repoInfo = `*🤖 KnightBot MD*
+    const repoInfo = `*🤖 Beltah Bot*\n
+📁 *GitHub Repository:*
+https://github.com/yourusername/BeltahBot
 
-*📂 GitHub Repository:*
-https://github.com/mruniquehacker/Knightbot-MD
+📺 *Official Channel:*
+https://youtube.com/@yourchannel
 
-*📢 Official Channel:*
-https://youtube.com/@mr_unique_hacker
-
-_Star ⭐ the repository if you like the bot!_`;
+_⭐ Star the repo if you love Beltah!_
+`;
 
     try {
         await sock.sendMessage(chatId, {
@@ -17,17 +17,17 @@ _Star ⭐ the repository if you like the bot!_`;
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
+                    newsletterName: 'Beltah Bot',
                     serverMessageId: -1
                 }
             }
         });
     } catch (error) {
         console.error('Error in github command:', error);
-        await sock.sendMessage(chatId, { 
-            text: '❌ Error fetching repository information.' 
+        await sock.sendMessage(chatId, {
+            text: '❌ Error fetching repository info.'
         });
     }
 }
 
-module.exports = githubCommand; 
+module.exports = githubCommand;
