@@ -1,32 +1,31 @@
+🤖 Beltah Bot – WhatsApp Bot
 
-# 🤖 Beltah MD - WhatsApp Bot
+**Beltah MD** ni mrembo wa command-based WhatsApp bot built on the powerful Baileys MD platform. It's packed with your favorite swag — from AI to texting games, chat auto-replies, and unmatched romantic chat vibes 💘.
 
-Beltah MD is a modern and customizable WhatsApp bot built on the foundation of KnightBot-MD. It provides a set of powerful features to automate groups, chat with users, and enhance communication on WhatsApp.
-
-> **Note:** This bot is fully locked to the number **+254741819582** and operated by the Beltah team.
-
----
-
-## 📜 Features
-
-- 🌍 Supports Hinglish, Swahili, and English
-- 🧠 AI-powered chatbot with Gen-Z and romantic responses
-- 🔒 Owner-only modes and chatbot lock
-- 🔁 Deleted message viewer (Anti-Delete)
-- 🎵 Song downloader and image fetcher (via Axios)
-- 🤖 Typing indicators and user memory system
-- 👑 Admin commands and group automations
-- 🔥 Stylish help menu with ASCII art and double-line UI
-- 📩 Telegram-style message formatting
+> 🔐 **Note:** This bot is fully locked to the number +254741819582 and operated by the **Beltah Team**.
 
 ---
 
-## 🛠 Setup Instructions
+## ✨ Features
+
+✅ Supports Hinglish, Swahili, and Beltah slang  
+🧠 Smart chatbot with flirty, savage and creative responses  
+🔒 Owner-only Mode and Chatbot Lock  
+📥 Easy MP3 and YouTube Music Downloader  
+🛠️ Text Effects, Image Maker (Text Designer)  
+📛 Auto-replies and user memory system  
+🪄 Fun commands like pair, match, and spin  
+🕒 Live bot status with auto-restart and custom time UI  
+🔡 Timestamp-style message formatting  
+
+---
+
+## 🔧 Setup Instructions
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/mruniquehacker/Knightbot-MD
-cd Knightbot-MD
+git clone https://github.com/username/beltah-whatsapp-bot
+cd beltah-md
 
 2. Install dependencies
 
@@ -34,38 +33,38 @@ npm install
 
 3. Update settings.js
 
-Change this:
+Make sure to configure your:
 
-const settings = {
-  packname: 'Beltah MD',
-  author: '',
-  botName: 'Beltah',
-  botOwner: 'Ishaq Ibrahim',
-  ownerNumber: '254741819582',
-  commandMode: 'public',
-  description: "This is a bot for managing group commands and automating tasks.",
-  version: "2.0.3"
-};
+ownerNumber
+
+botName
+
+prefix
+
+author
+
+sessionPath
+
 
 
 ---
 
-🔐 Lock Info
+👤 User Info
 
-This bot is locked to +254741819582. If anyone else attempts to install or run this bot, it will auto-exit with a lock warning.
+This bot is locked to +254741819582. If anyone else attempts to install or run this bot, it will auto-reject with a loud warning. 🚫
 
 
 ---
 
 💬 Chatbot Modes
 
-romantic – flirty and sweet responses 💕
+romantic – Flirty and sweet responses 💞
 
-polite – formal, respectful tones ☺️
+polite – Formal, respectful convo 😇
 
-kiswahili – Swahili + Kenyan Gen Z slang 🐐
+hype-ish – Similar to Aiywa Bot & slang 🔥
 
-igimo – funny & cheeky street vibes 😎
+igimo – Funny & cheeky street vibes 🤪
 
 
 Switch modes using admin chatbot commands.
@@ -73,48 +72,30 @@ Switch modes using admin chatbot commands.
 
 ---
 
-⚙️ Commands (Sample)
+📜 Commands (Sample)
 
-/chatbot on — turn on chatbot
-/chatbot off — turn off chatbot
-/beltah — view bot info
-/menu — show full feature menu
-/download [song name] — fetch audio via Axios
-/viewstatus — view WhatsApp status
-
-
----
-
-🎨 ASCII Branding
-
-🄱🄴🄻🅃🄰🄷 🄼🄳
-
-Enjoy the elegant double-line style all through the help menus and branding areas.
+/chatbot on   – Turn on chatbot  
+/chatbot off  – Turn off chatbot  
+/match @user  – Pair two users  
+/play <yt link / query> – Fetch audio via Axios  
+/textmaker <style> <text> – Stylish text design
 
 
 ---
 
-📂 Credits
+🧬 GPT Branding
 
-Based on: KnightBot-MD
-
-Developer: Ishaq Ibrahim
-
-Giphy API: Enabled
-
-Axios used for image & song downloads
-
-Sharp removed due to issues; replaced with Axios + GIMP (if used)
-
+Enjoy the deepest convo-like style all through the help script and branding areas.
 
 
 ---
 
-📩 Contact
+ℹ️ Bot Info
 
 Bot Owner: Ishaq Ibrahim
-WhatsApp: +254 741 819 582
-Status: Public, single-owner lock enabled.
+Bot Name: Beltah MD
+Server: RailWay, Offline/Online lock enabled
+Lang: Kiswahili, English
 
 
 ---
@@ -126,18 +107,29 @@ This project is licensed under the MIT License.
 
 ---
 
-> This README was generated with ❤️ by Beltah Team. Stay connected, stay automated.
+> ❤️ THIS README WAS generated with 💖 by Beltah Team. Stay correct, stay automated.
+
 
 
 
 ---
 
-### ✅ Now What?
+🧐 Why Beltah?
 
-1. **Copy all of the above exactly as it is** (from `# 🤖 Beltah MD...` to the end).
-2. Replace the contents of your current `README.md` file.
-3. Save and commit the changes.
+> “Sijui, all of the above maybe ni si she fine 😭
+Beltah the definition of only smart SLANG na fine.”
 
-You're now all set to go to work, and your bot has a clean, complete, final README.
+When she responds, utajua.
 
-Let me know if you want it in a downloadable `.md` file too — I’ll create and send it right away.
+
+
+You're free to fork it, remix it, and pass her like a class. 🤌
+Just don’t be toxic, bro.
+
+Let us know if you want a downloadable .read file too — I'll format one and send it right away.
+
+---
+
+Let me know if you want a dark-themed HTML or PDF version of this README — Beltah style 😎.
+
+
