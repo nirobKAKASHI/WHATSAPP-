@@ -1,122 +1,157 @@
 
----
+<h1 align="center">✨ BELTAHBOT-MD ✨</h1>
 
-BELTAH BOT – WHATSAPP BOT
+<p align="center">
+  <img src="./assets/belta-dashboard.png" width="400" alt="BeltahBot Dashboard"/>
+</p>
 
-Beltah MD is a powerful customizable WhatsApp bot built on the KnightMD-MD framework. It provides a set of powerful features in a simple setup, with cool styles, AI-enhanced conversations, and multi-language responses.
-
-NOTE: This bot is fully locked to the number +254741819582 and is owned by the Beltah team.
-
-
----
-
-FEATURES
-
-Supports Swahili and English
-
-Chatbot (with both smart and romantic responses)
-
-Owner mode and chatbot lock
-
-Group/Private Chat Auto-Detect
-
-Text Image Generator (text-maker styles)
-
-Romantic, Swahili, and Hype chatbot modes
-
-Download songs by title
-
-Stickers, audio, video and image results from GDrive
-
-Timestamped file message formatting
-
-
+<p align="center">
+  <strong>🔥 BeltahBot-MD - A Powerful, Customized WhatsApp Bot 🔥</strong><br/>
+  Built with 💙 by <b>Ishaq Ibrahim</b> | AI: Gminae × CrewDrew × ChatGPT<br/>
+  Fully locked to: <code>+254741819582</code>
+</p>
 
 ---
 
-SETUP INSTRUCTIONS
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/BeltahBot-Online-green?style=flat-square"></a>
+  <a href="#"><img src="https://img.shields.io/github/forks/Toxicant1/BeltahBot-MD?style=social"></a>
+  <a href="#"><img src="https://img.shields.io/github/stars/Toxicant1/BeltahBot-MD?style=social"></a>
+  <a href="https://wa.me/254741819582?text=Hello%20Beltah%20Bot"><img src="https://img.shields.io/badge/Chat%20with%20Beltah%20Bot-25D366?logo=whatsapp&logoColor=white&style=flat-square" /></a>
+</p>
 
-Step 1: Clone this repository
+---
+
+## 🌍 About BeltahBot
+
+**BeltahBot-MD** is a powerful, customizable WhatsApp bot based on the KnightBot-MD framework. It includes:
+- Multi-language chatbot modes (Swahili, English, Kiswahili slang)
+- Admin-only lock
+- AI-enhanced chatbot powered by ChatGPT
+- Stylish media replies (images, stickers, audio, video, etc.)
+- Romantic + fun chatbot moods
+
+This bot is fully locked to:  
+📞 `+254741819582`
+
+---
+
+## 🛠 Features
+
+✅ Supports Swahili, English, and Kiswahili slang  
+✅ Admin-only chatbot mode  
+✅ Group/Private Chat Auto Detector  
+✅ IGIMO, Polite, Romantic, Fun Modes  
+✅ Sticker, Text-to-Image, Downloader tools  
+✅ AI Stack: `Gminae → CrewDrew (images) → ChatGPT (final output)`
+
+---
+
+## 💻 Easy 3-Step Setup
+
+```bash
+# Step 1: Clone this repo
 git clone https://github.com/Toxicant1/BeltahBot-MD
+
+# Step 2: Enter the folder
 cd BeltahBot-MD
 
-Step 2: Install dependencies
+# Step 3: Install dependencies
 npm install
 
-Step 3: Update settings.js
+# Step 4: Run the bot
+node index.js
 
 
 ---
 
-USER INFO
+🔐 User Lock & Bot Protection
 
-This bot is locked to +254741819582. If anyone else attempts to install or run this bot, it will automatically lock & stop running.
-
-
----
-
-CHATBOT MODES
-
-romantic – flirty and sweet responses
-
-polite – formal, respectful tones
-
-hype-ish – Swahili + Kenyan Gen Z slang
-
-igimo – funny & cheeky street vibes
-
-
-Switch modes using admin chatbot commands.
+This bot is locked to +254741819582
+Unauthorized use will disable execution.
 
 
 ---
 
-COMMANDS (SAMPLE)
+🤖 Chatbot Modes
 
-/chatbot on – turn on chatbot
-/chatbot off – turn off chatbot
-/mode romantic – enable flirty mode
-/mode polite – clean polite mode
-/sticker – turn image to sticker with auto crop
-/yt - song & video search
+/chatbot on - turn on chatbot
 
+/chatbot off - turn it off
 
----
+/chatbot mode romantic | funny | polite | clean
 
-GPT BRANDING
-
-Enjoy the deepest custom Gen Z style still through the help of GPT and branding areas.
-
-Based on: KnightMD-MD
-
-Developer: Beltah Dev Team
-
-GPT Style AI: Enabled
-
-Axios used for image + song downloads
-
-Replaces multi-Audio + GIMP (if used)
+/sticker, /attp, /gpt - send AI replies, stickers, memes
 
 
 
 ---
 
-BOT INFO
+☁️ DEPLOY YOUR BELTAHBOT FOR FREE
 
-Bot Owner (static license):
-Message: +254 741 819 582
-Server: Firebase, GPT-Owner Lock Enabled
-Language: EN, SW, Hinglish
+Deploy your bot using any of the free platforms below:
+
+🚀 Railway (Recommended)
+
+Link: https://railway.app
+
+Free 500h/month, GitHub support, fast and stable
+
+
+🧠 Replit
+
+Link: https://replit.com
+
+Online IDE + UptimeRobot ping for 24/7 uptime
+
+
+⚡ Glitch
+
+Link: https://glitch.com
+
+Lightweight projects, add keep-alive ping tool
+
 
 
 ---
 
-LICENSE
+💬 Contact & Support
 
-This project is licensed under the MIT License.
+Need help with setup or updates?
+
+📞 WhatsApp Support
+📧 Email: isaac0maina@gmail.com | ishaq78ibrahim@gmail.com
 
 
 ---
 
-Let me know if you'd like this added to your actual README.md file directly as code, or auto-fixed into Markdown format without breaking emoji/text again.
+👨‍💻 Credits
 
+Developer: Ishaq Ibrahim
+
+Base Code: KnightBot-MD (modified & stripped)
+
+AI: ChatGPT (OpenAI), CrewDrew (Images), Gminae
+
+Media handling: GIMP + no SHARP (for safety)
+
+Project Branding & Docs: Beltah Tech 254 🇰🇪
+
+
+
+---
+
+🪪 License
+
+MIT License © 2025
+This code is open-source, free to modify — but must retain original author credit.
+No resale or commercial use is allowed without permission.
+
+
+---
+
+<p align="center">
+  <b>© BELTAH XBOT ✨ 2025 ✨ | Coded with 💙 by Ishaq Ibrahim</b>
+</p>
+```
+---
