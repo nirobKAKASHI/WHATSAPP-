@@ -1,157 +1,153 @@
+✨ **BELTAHBOT-MD** ✨  
+![BeltahBot Dashboard](assets/Screenshot_20250619_154753_Chrome.jpg)
 
-<h1 align="center">✨ BELTAHBOT-MD ✨</h1>
-
-<p align="center">
-  <img src="./assets/belta-dashboard.png" width="400" alt="BeltahBot Dashboard"/>
-</p>
-
-<p align="center">
-  <strong>🔥 BeltahBot-MD - A Powerful, Customized WhatsApp Bot 🔥</strong><br/>
-  Built with 💙 by <b>Ishaq Ibrahim</b> | AI: Gminae × CrewDrew × ChatGPT<br/>
-  Fully locked to: <code>+254741819582</code>
-</p>
+🔥 **BeltahBot‑MD** – A powerful, customized WhatsApp bot  
+👤 Built by **Ishaq Ibrahim** | 🤖 AI Stack: Gminae × CrewDrew × ChatGPT  
+🔒 Locked to: **+254 741 819 582**
 
 ---
 
-<p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/BeltahBot-Online-green?style=flat-square"></a>
-  <a href="#"><img src="https://img.shields.io/github/forks/Toxicant1/BeltahBot-MD?style=social"></a>
-  <a href="#"><img src="https://img.shields.io/github/stars/Toxicant1/BeltahBot-MD?style=social"></a>
-  <a href="https://wa.me/254741819582?text=Hello%20Beltah%20Bot"><img src="https://img.shields.io/badge/Chat%20with%20Beltah%20Bot-25D366?logo=whatsapp&logoColor=white&style=flat-square" /></a>
-</p>
+### 💎 Stats & Links
+![Build Status: 🟢 Online](#)  
+⭐  |  Forks: 0 | Stars: 1  
+[🔗 Chat with Beltah Bot](#)  
 
 ---
 
-## 🌍 About BeltahBot
+### 🚀 About BeltahBot
+BeltahBot‑MD is a modern, customizable AI-enhanced WhatsApp bot, based on the KnightBot‑MD framework. It offers:
+- Multi‑mode chatbot (English, Swahili, English slang)  
+- Admin‑only lock mode for control and security  
+- GPT‑powered AI responses with stylish media (images, stickers, audio, video…)  
+- Fun moods: Polite, Romantic, IGIMO, Clean  
 
-**BeltahBot-MD** is a powerful, customizable WhatsApp bot based on the KnightBot-MD framework. It includes:
-- Multi-language chatbot modes (Swahili, English, Kiswahili slang)
-- Admin-only lock
-- AI-enhanced chatbot powered by ChatGPT
-- Stylish media replies (images, stickers, audio, video, etc.)
-- Romantic + fun chatbot moods
-
-This bot is fully locked to:  
-📞 `+254741819582`
+Fully locked to: **+254 741 819 582** — Other users will be blocked from using it.
 
 ---
 
-## 🛠 Features
-
-✅ Supports Swahili, English, and Kiswahili slang  
-✅ Admin-only chatbot mode  
-✅ Group/Private Chat Auto Detector  
-✅ IGIMO, Polite, Romantic, Fun Modes  
-✅ Sticker, Text-to-Image, Downloader tools  
-✅ AI Stack: `Gminae → CrewDrew (images) → ChatGPT (final output)`
+### 🛠 Features
+- ✅ English, Swahili, IGIMO (street slang)  
+- 🔐 Admin‑only chatbot lock  
+- 🧠 AI responses: Gminae → CrewDrew (images) → ChatGPT (final text)  
+- 🖼 Stylish media support (stickers, images, audio/video download)
 
 ---
 
-## 💻 Easy 3-Step Setup
+### ⚙️ Easy‑Setup Guide (No Code Needed)
+1. **Clone this repo**  
+   ```bash
+   git clone https://github.com/Toxicant1/BeltahBot‑MD.git
+   cd BeltahBot‑MD
 
-```bash
-# Step 1: Clone this repo
-git clone https://github.com/Toxicant1/BeltahBot-MD
+2. Install dependencies
 
-# Step 2: Enter the folder
-cd BeltahBot-MD
-
-# Step 3: Install dependencies
 npm install
 
-# Step 4: Run the bot
+
+3. Configure bot in settings.js & config.js (set your WhatsApp session ID, etc.)
+
+
+4. Run the bot
+
 node index.js
+
+
 
 
 ---
 
 🔐 User Lock & Bot Protection
 
-This bot is locked to +254741819582
-Unauthorized use will disable execution.
+This bot is permanently locked to +254 741 819 582.
+⚠️ Unauthorized users will be automatically banned.
 
 
 ---
 
 🤖 Chatbot Modes
 
-/chatbot on - turn on chatbot
+Command	Description
 
-/chatbot off - turn it off
-
-/chatbot mode romantic | funny | polite | clean
-
-/sticker, /attp, /gpt - send AI replies, stickers, memes
-
-
-
----
-
-☁️ DEPLOY YOUR BELTAHBOT FOR FREE
-
-Deploy your bot using any of the free platforms below:
-
-🚀 Railway (Recommended)
-
-Link: https://railway.app
-
-Free 500h/month, GitHub support, fast and stable
-
-
-🧠 Replit
-
-Link: https://replit.com
-
-Online IDE + UptimeRobot ping for 24/7 uptime
-
-
-⚡ Glitch
-
-Link: https://glitch.com
-
-Lightweight projects, add keep-alive ping tool
+/chatbot on	Turn the chatbot on
+/chatbot off	Turn it off
+/mode polite	Friendly, polite responses
+/mode romantic	Romantic, loving responses
+/mode IGIMO	Kenyan slang, street vibes
+/mode clean	Formal and neat expression
 
 
 
 ---
 
-💬 Contact & Support
+⚡️ Deploy Anywhere for Free
 
-Need help with setup or updates?
+Skip the need for paid platforms like Heroku. Use these:
 
-📞 WhatsApp Support
-📧 Email: isaac0maina@gmail.com | ishaq78ibrahim@gmail.com
+Railway.app – Simple deployment, free tier
+
+Cyclic.sh – Auto‑deploy from GitHub, always free
+
+Zeabur.com – Reliable, easy Node.js hosting
 
 
----
-
-👨‍💻 Credits
-
-Developer: Ishaq Ibrahim
-
-Base Code: KnightBot-MD (modified & stripped)
-
-AI: ChatGPT (OpenAI), CrewDrew (Images), Gminae
-
-Media handling: GIMP + no SHARP (for safety)
-
-Project Branding & Docs: Beltah Tech 254 🇰🇪
-
+Choose whichever suits you best!
 
 
 ---
 
-🪪 License
+✨ New Updates (June 2025)
 
-MIT License © 2025
-This code is open-source, free to modify — but must retain original author credit.
-No resale or commercial use is allowed without permission.
+🧹 Auto‑cleanup of tmp/ & temp/ folders every 6 hours
+
+New clearTmp command for owner to manually clear temp files
+
+settings.js bumped to v2.0.4
+
+Security mode improvements
+
 
 
 ---
 
-<p align="center">
-  <b>© BELTAH XBOT ✨ 2025 ✨ | Coded with 💙 by Ishaq Ibrahim</b>
-</p>
-```
+💝 Credits & Thanks
+
+AI Chat: ChatGPT, Gminae, CrewDrew
+
+Base Bot: Adapted from KnightBot‑MD
+
+Developer: Ishaq Ibrahim
+
+📧 isaac0maina@gmail.com
+
+📧 ishaq78ibrahim@gmail.com
+
+
+
+
 ---
+
+📦 License
+
+Licensed under the MIT License.
+© 2025 Beltah Dev Team. All rights reserved.
+
+
+---
+
+Enjoy BeltahBot-MD!
+Enhance your group chats with smart AI, stylish media, and fun vibes. 🎉
+
+---
+
+### ✅ What to Do Next:
+1. **Replace** the content of your `README.md` with the markdown above.
+2. **Delete** the empty `belta-dashboard.png` file.
+3. **Ensure** this line appears at the top of your repo:
+
+   `assets/Screenshot_20250619_154753_Chrome.jpg`
+
+4. **Commit** the changes directly to the `bdelta‑secure` branch.
+5. Finally, **merge** into `main` or open a pull request to finalize.
+
+Let me know once you’ve updated it or if you’d like any further tweaks!
+
