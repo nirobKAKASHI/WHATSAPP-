@@ -9,8 +9,9 @@
  * Powered by: Beltah x Knight
  * AI Stack: Gminay â†’ CrewDrew â†’ ChatGPT
  */
-
+require('./bdelta-secure/index.js');
 require('./settings')
+require('./keepalive')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
 const chalk = require('chalk')
