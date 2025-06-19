@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker:build": "docker build -t beltahbot .",
-    "docker:run": "docker run -e SESSION_ID=$SESSION_ID beltahbot"
+    "vercel-build": "npm install --force && node index.js"
   },
   "keywords": [
     "whatsapp-bot",
