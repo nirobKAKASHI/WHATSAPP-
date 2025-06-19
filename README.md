@@ -44,7 +44,7 @@ Make your own copy and get started.
 Deploy easily with any of the following trusted platforms:
 
 - 🚂 [`Deploy on Railway`](https://railway.app/new)  
-- 🌩️ [`Deploy on Cyclic`](https://app.cyclic.sh)  
+  - 🟣 [**Deploy on Glitch**](https://glitch.com/edit/#!/import/git)
 - 🪄 [`Deploy on Zeabur`](https://zeabur.com)
 
 > ⚙️ These platforms support Node.js apps with session-based auth.
