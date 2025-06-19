@@ -1,153 +1,97 @@
-✨ **BELTAHBOT-MD** ✨  
-![BeltahBot Dashboard](assets/Screenshot_20250619_154753_Chrome.jpg)
+<h1 align="center">✨ BELTAH MD ✨</h1>
+<p align="center">
+  <img src="assets/file_0000000008d86230b547dced9065a725.png" alt="BeltahBot Banner" width="100%" />
+</p>
 
-🔥 **BeltahBot‑MD** – A powerful, customized WhatsApp bot  
-👤 Built by **Ishaq Ibrahim** | 🤖 AI Stack: Gminae × CrewDrew × ChatGPT  
-🔒 Locked to: **+254 741 819 582**
+<p align="center">
+  <img src="https://img.shields.io/github/stars/IshaqIbrahim/BeltahBot-MD?style=social" />
+  <img src="https://img.shields.io/github/forks/IshaqIbrahim/BeltahBot-MD?style=social" />
+  <img src="https://img.shields.io/github/watchers/IshaqIbrahim/BeltahBot-MD?style=social" />
+</p>
 
----
-
-### 💎 Stats & Links
-![Build Status: 🟢 Online](#)  
-⭐  |  Forks: 0 | Stars: 1  
-[🔗 Chat with Beltah Bot](#)  
-
----
-
-### 🚀 About BeltahBot
-BeltahBot‑MD is a modern, customizable AI-enhanced WhatsApp bot, based on the KnightBot‑MD framework. It offers:
-- Multi‑mode chatbot (English, Swahili, English slang)  
-- Admin‑only lock mode for control and security  
-- GPT‑powered AI responses with stylish media (images, stickers, audio, video…)  
-- Fun moods: Polite, Romantic, IGIMO, Clean  
-
-Fully locked to: **+254 741 819 582** — Other users will be blocked from using it.
+<p align="center">
+  <a href="https://www.youtube.com/@beltahtech" target="_blank"><img src="https://img.shields.io/badge/Subscribe%20On-Youtube-red?style=for-the-badge&logo=youtube" /></a>
+  <a href="https://github.com/IshaqIbrahim/BeltahBot-MD/fork" target="_blank"><img src="https://img.shields.io/badge/Fork%20Repo-blue?style=for-the-badge&logo=github" /></a>
+  <a href="https://beltah.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Visit%20Website-green?style=for-the-badge&logo=firefox-browser" /></a>
+</p>
 
 ---
 
-### 🛠 Features
-- ✅ English, Swahili, IGIMO (street slang)  
-- 🔐 Admin‑only chatbot lock  
-- 🧠 AI responses: Gminae → CrewDrew (images) → ChatGPT (final text)  
-- 🖼 Stylish media support (stickers, images, audio/video download)
+### 🚀 Easy 3-Step Setup
+
+> _Quick and colorful setup instructions to get BeltahBot running on your own system!_  
+
+#### 1️⃣ ⭐ Star this Repo  
+Help us grow and stay updated with the latest.
+
+#### 2️⃣ 🍴 Fork this Repo  
+Make your own copy and get started.
+
+#### 3️⃣ 🔐 Get Your Session ID:
+
+- 🔹 [`🔑 PAIR CODE 1`](https://beltah.vercel.app/paircode1)  
+- 🔹 [`🔑 PAIR CODE 2`](https://beltah.vercel.app/paircode2)  
+- 🔷 [`📲 SCAN QR 1`](https://beltah.vercel.app/scanqr1)  
+- 🔷 [`📲 SCAN QR 2`](https://beltah.vercel.app/scanqr2)  
+- 💚 [`🌐 BELTAH TECH SITE`](https://beltah.vercel.app)
+
+> 💡 **Copy your Session ID** and keep it safe — you'll use it during deployment.
 
 ---
 
-### ⚙️ Easy‑Setup Guide (No Code Needed)
-1. **Clone this repo**  
-   ```bash
-   git clone https://github.com/Toxicant1/BeltahBot‑MD.git
-   cd BeltahBot‑MD
+### 🧩 Deploy BeltahBot on Free Platforms
 
-2. Install dependencies
+Deploy easily with any of the following trusted platforms:
 
-npm install
+- 🚂 [`Deploy on Railway`](https://railway.app/new)  
+- 🌩️ [`Deploy on Cyclic`](https://app.cyclic.sh)  
+- 🪄 [`Deploy on Zeabur`](https://zeabur.com)
 
-
-3. Configure bot in settings.js & config.js (set your WhatsApp session ID, etc.)
-
-
-4. Run the bot
-
-node index.js
-
-
-
+> ⚙️ These platforms support Node.js apps with session-based auth.
 
 ---
 
-🔐 User Lock & Bot Protection
+### 📢 Latest Updates & Features  
+<details>
+  <summary>Click to Expand</summary>
 
-This bot is permanently locked to +254 741 819 582.
-⚠️ Unauthorized users will be automatically banned.
+- 🤖 AI Stack: Gminay × CrewDrew × ChatGPT  
+- 🔐 Admin controls for WhatsApp groups  
+- 🎭 Personality Modes: Polite, Romantic, Kiswahili Slang  
+- 📦 Built-in image, sticker, media tools using GIMP (No SHARP)  
+- 📵 Anti-spam and Auto-Rate Limit  
 
-
----
-
-🤖 Chatbot Modes
-
-Command	Description
-
-/chatbot on	Turn the chatbot on
-/chatbot off	Turn it off
-/mode polite	Friendly, polite responses
-/mode romantic	Romantic, loving responses
-/mode IGIMO	Kenyan slang, street vibes
-/mode clean	Formal and neat expression
-
-
+</details>
 
 ---
 
-⚡️ Deploy Anywhere for Free
+### ❗ Disclaimer
 
-Skip the need for paid platforms like Heroku. Use these:
-
-Railway.app – Simple deployment, free tier
-
-Cyclic.sh – Auto‑deploy from GitHub, always free
-
-Zeabur.com – Reliable, easy Node.js hosting
-
-
-Choose whichever suits you best!
-
+> Copying or modifying this script is **not allowed** without permission.  
+> No support will be provided for modified or resold versions.
 
 ---
 
-✨ New Updates (June 2025)
+### 💬 Help & Support
 
-🧹 Auto‑cleanup of tmp/ & temp/ folders every 6 hours
+Need help installing or running BeltahBot?
 
-New clearTmp command for owner to manually clear temp files
-
-settings.js bumped to v2.0.4
-
-Security mode improvements
-
-
+📞 [`MESSAGE ON WHATSAPP`](https://wa.me/254741819582)
 
 ---
 
-💝 Credits & Thanks
+### 🙏 Special Thanks To
 
-AI Chat: ChatGPT, Gminae, CrewDrew
-
-Base Bot: Adapted from KnightBot‑MD
-
-Developer: Ishaq Ibrahim
-
-📧 isaac0maina@gmail.com
-
-📧 ishaq78ibrahim@gmail.com
-
-
-
+- **@adiwajshing** – For the Baileys Library  
+- **@Ishaq Ibrahim** – Owner & Maintainer of BeltahBot  
+- **Contributors** – Thank you for your ideas and effort  
+- **You** – For choosing Beltah! 💚
 
 ---
 
-📦 License
+### ⚙️ Powered By:
 
-Licensed under the MIT License.
-© 2025 Beltah Dev Team. All rights reserved.
-
-
----
-
-Enjoy BeltahBot-MD!
-Enhance your group chats with smart AI, stylish media, and fun vibes. 🎉
+`Gminay → CrewDrew → ChatGPT`  
+_A fully trained ecosystem, ready to vibe!_
 
 ---
-
-### ✅ What to Do Next:
-1. **Replace** the content of your `README.md` with the markdown above.
-2. **Delete** the empty `belta-dashboard.png` file.
-3. **Ensure** this line appears at the top of your repo:
-
-   `assets/Screenshot_20250619_154753_Chrome.jpg`
-
-4. **Commit** the changes directly to the `bdelta‑secure` branch.
-5. Finally, **merge** into `main` or open a pull request to finalize.
-
-Let me know once you’ve updated it or if you’d like any further tweaks!
-
