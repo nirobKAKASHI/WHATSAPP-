@@ -8,7 +8,7 @@ Beltah MD is a powerful customizable WhatsApp bot built on the KnightMD-MD frame
 
 ## âœ¨ Features
 
-ðŸ”¥ Supports Hinglish, Swahili, and English  
+ðŸ”¥ Supports Swahili, and English  
 ðŸ§  Chatbot (with both smart and romantic responses)  
 ðŸ” Owner mode and chatbot lock  
 ðŸ”„ Group/Private Chat Auto-Detect  
