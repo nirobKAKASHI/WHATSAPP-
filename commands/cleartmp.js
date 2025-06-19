@@ -15,7 +15,6 @@ function clearDirectory(dirPath) {
                 fs.unlinkSync(filePath);
                 deletedCount++;
             } catch (err) {
-                // Only log errors
                 console.error(`Error deleting file ${file}:`, err);
             }
         }
@@ -33,66 +32,59 @@ async function clearTmpDirectory() {
     const results = [];
     results.push(clearDirectory(tmpDir));
     results.push(clearDirectory(tempDir));
-    // Combine results
     const success = results.every(r => r.success);
     const totalDeleted = results.reduce((sum, r) => sum + (r.count || 0), 0);
     const message = results.map(r => r.message).join(' | ');
     return { success, message, count: totalDeleted };
 }
 
-// Function to handle manual command
+// Manual .cleartmp command
 async function clearTmpCommand(sock, chatId, msg) {
     try {
-        // Check if user is owner
         const isOwner = msg.key.fromMe;
         if (!isOwner) {
-            await sock.sendMessage(chatId, { 
-                text: '❌ This command is only available for the owner!' 
+            await sock.sendMessage(chatId, {
+                text: '❌ This command is only available for the owner!'
             });
             return;
         }
 
         const result = await clearTmpDirectory();
-        
+
         if (result.success) {
-            await sock.sendMessage(chatId, { 
-                text: `✅ ${result.message}` 
+            await sock.sendMessage(chatId, {
+                text: `✅ ${result.message}`
             });
         } else {
-            await sock.sendMessage(chatId, { 
-                text: `❌ ${result.message}` 
+            await sock.sendMessage(chatId, {
+                text: `❌ ${result.message}`
             });
         }
 
     } catch (error) {
         console.error('Error in cleartmp command:', error);
-        await sock.sendMessage(chatId, { 
-            text: '❌ Failed to clear temporary files!' 
+        await sock.sendMessage(chatId, {
+            text: '❌ Failed to clear temporary files!'
         });
     }
 }
 
-// Start automatic clearing every 6 hours
+// Automatic cleaner every 6 hours
 function startAutoClear() {
-    // Run immediately on startup
     clearTmpDirectory().then(result => {
         if (!result.success) {
             console.error(`[Auto Clear] ${result.message}`);
         }
-        // No log for success, regardless of count
     });
 
-    // Set interval for every 6 hours
     setInterval(async () => {
         const result = await clearTmpDirectory();
         if (!result.success) {
             console.error(`[Auto Clear] ${result.message}`);
         }
-        // No log for success, regardless of count
-    }, 6 * 60 * 60 * 1000); // 6 hours in milliseconds
+    }, 6 * 60 * 60 * 1000); // every 6 hours
 }
 
-// Start the automatic clearing
 startAutoClear();
 
-module.exports = clearTmpCommand; 
+module.exports = clearTmpCommand;
