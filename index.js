@@ -11,6 +11,7 @@
  */
 
 require('./settings')
+require('./keepalive')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
 const chalk = require('chalk')
