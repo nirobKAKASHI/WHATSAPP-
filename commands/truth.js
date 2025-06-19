@@ -19,7 +19,7 @@ async function truthCommand(sock, chatId, message) {
   } catch (error) {
     console.error('Error in truth command:', error);
     await sock.sendMessage(chatId, {
-      text: `❌ Ai Belta, truth imefail kuruka. Try tena baadaye bana 😅`,
+      text: `❌ Ai Beltah, truth imefail kuruka. Try tena baadaye bana 😅`,
       quoted: message
     });
   }
