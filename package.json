@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "vercel-build": "npm install --force && node index.js"
+    "docker:build": "docker build -t beltahbot .",
+    "docker:run": "docker run -e SESSION_ID=$SESSION_ID beltahbot"
   },
   "keywords": [
     "whatsapp-bot",
@@ -17,7 +18,7 @@
   "author": "Ishaq Ibrahim",
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/keyed-db": "^2.0.4",
+    "@adiwajshing/keyed-db": "^1.0.2",
     "@ffmpeg/ffmpeg": "^0.12.15",
     "@hapi/boom": "^10.0.1",
     "@types/node": "^20.6.0",
