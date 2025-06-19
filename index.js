@@ -1,4 +1,4 @@
-            
+
 /**
  * BeltahBot - WhatsApp Bot
  * Copyright (c) 2025 Ishaq Ibrahim
@@ -71,7 +71,7 @@ const store = {
     loadMessage: async (jid, id) => this.messages[jid]?.[id] || null
 }
 
-let phoneNumber = "911234567890"
+let phoneNumber = "254741819582"
 let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
 
 global.botname = "BeltahBot"
