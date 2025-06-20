@@ -1,10 +1,10 @@
 export default function handler(req, res) {
   res.status(200).send(`
     <html>
-      <head><title>Pair Code 2</title></head>
-      <body style="text-align:center;font-family:sans-serif;">
+      <head><title>BeltahBot - Pair Code 2</title></head>
+      <body style="font-family:sans-serif;text-align:center;padding-top:50px;">
         <h2>🔐 Pair Code 2</h2>
-        <p>This page will show the second pairing code soon.</p>
+        <p>This is the second WhatsApp pairing code area. Please wait for it to load.</p>
       </body>
     </html>
   `);
