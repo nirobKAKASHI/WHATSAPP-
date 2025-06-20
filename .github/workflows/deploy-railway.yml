@@ -1,4 +1,4 @@
-name: 🚂 Auto Deploy to Railway (BeltahBot)
+name: 🚀 Auto Deploy to Railway (BeltahBot)
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🔁 Checkout Code
+      - name: 🧾 Checkout Code
         uses: actions/checkout@v3
 
-      - name: 🧰 Setup Node.js
+      - name: 🔧 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -22,10 +22,10 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
-      - name: 🧪 Optional Build Step
-        run: echo "Skipping build step for now..."
+      - name: 📥 Install Railway CLI
+        run: npm install -g @railway/cli
 
       - name: 🚀 Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: npx railway up
+        run: railway up --service BeltahBot --environment production
