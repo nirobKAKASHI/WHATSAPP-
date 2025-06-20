@@ -1,64 +1,35 @@
-const fetch = require('node-fetch');
-
-async function simpCommand(sock, chatId, quotedMsg, mentionedJid, sender) {
+module.exports = async function simpCommand(sock, chatId, quotedMsg, mentionedJid, sender) {
     try {
-        // Determine the target user
-        let who = quotedMsg 
-            ? quotedMsg.sender 
-            : mentionedJid && mentionedJid[0] 
-                ? mentionedJid[0] 
+        // Identify target (quoted, mentioned, or sender)
+        let who = quotedMsg
+            ? quotedMsg.sender
+            : mentionedJid?.[0]
+                ? mentionedJid[0]
                 : sender;
 
-        // Get the profile picture URL
-        let avatarUrl;
-        try {
-            avatarUrl = await sock.profilePictureUrl(who, 'image');
-        } catch (error) {
-            console.error('Error fetching profile picture:', error);
-            avatarUrl = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'; // Default avatar
-        }
+        const number = who.split('@')[0];
 
-        // Fetch the simp card from the API
-        const apiUrl = `https://some-random-api.com/canvas/misc/simpcard?avatar=${encodeURIComponent(avatarUrl)}`;
-        const response = await fetch(apiUrl);
-        
-        if (!response.ok) {
-            throw new Error(`API responded with status: ${response.status}`);
-        }
+        // Simulated simp level (random)
+        const simpLevel = Math.floor(Math.random() * 50) + 50; // between 50% and 100%
+        const remarks = [
+            "Ebu relax boss 😹",
+            "You're deep in the simp zone 💘",
+            "Unaweza enda love rehab 😭",
+            "Kumbe wewe ni top tier simp 😍",
+            "Hii level ya kupenda imezidi bana 🔥"
+        ];
+        const randomRemark = remarks[Math.floor(Math.random() * remarks.length)];
 
-        // Get the image buffer
-        const imageBuffer = await response.buffer();
-
-        // Send the image with caption
+        // Send fun simp result
         await sock.sendMessage(chatId, {
-            image: imageBuffer,
-            caption: '*your religion is simping*',
-            contextInfo: {
-                forwardingScore: 1,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
-                    serverMessageId: -1
-                }
-            }
-        });
+            text: `🫦 *BeltahBot SimpMeter™*\n\n@${number} is *${simpLevel}% SIMP* 🔥\n${randomRemark}`,
+            mentions: [who]
+        }, { quoted: quotedMsg });
 
-    } catch (error) {
-        console.error('Error in simp command:', error);
-        await sock.sendMessage(chatId, { 
-            text: '❌ Sorry, I couldn\'t generate the simp card. Please try again later!',
-            contextInfo: {
-                forwardingScore: 1,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
-                    serverMessageId: -1
-                }
-            }
-        });
+    } catch (err) {
+        console.error('🔥 Error in BeltahBot simp command:', err);
+        await sock.sendMessage(chatId, {
+            text: `❌ *BeltahBot:* Siwezi ku-calculate SIMP level sa hii. Try tena baadaye bana 😓`
+        }, { quoted: quotedMsg });
     }
-}
-
-module.exports = { simpCommand }; 
+};

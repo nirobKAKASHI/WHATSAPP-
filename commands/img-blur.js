@@ -1,83 +1,79 @@
 const { downloadMediaMessage } = require('@whiskeysockets/baileys');
+const Jimp = require('jimp');
 const axios = require('axios');
-const sharp = require('sharp');
+const FormData = require('form-data');
 
 async function blurCommand(sock, chatId, message, quotedMessage) {
-    try {
-        // Get the image to blur
-        let imageBuffer;
-        
-        if (quotedMessage) {
-            // If replying to a message
-            if (!quotedMessage.imageMessage) {
-                await sock.sendMessage(chatId, { 
-                    text: '❌ Please reply to an image message' 
-                });
-                return;
-            }
-            
-            const quoted = {
-                message: {
-                    imageMessage: quotedMessage.imageMessage
-                }
-            };
-            
-            imageBuffer = await downloadMediaMessage(
-                quoted,
-                'buffer',
-                { },
-                { }
-            );
-        } else if (message.message?.imageMessage) {
-            // If image is in current message
-            imageBuffer = await downloadMediaMessage(
-                message,
-                'buffer',
-                { },
-                { }
-            );
-        } else {
-            await sock.sendMessage(chatId, { 
-                text: '❌ Please reply to an image or send an image with caption .blur' 
-            });
-            return;
-        }
+  try {
+    let imageBuffer;
 
-        // Resize and optimize image
-        const resizedImage = await sharp(imageBuffer)
-            .resize(800, 800, { // Resize to max 800x800
-                fit: 'inside',
-                withoutEnlargement: true
-            })
-            .jpeg({ quality: 80 }) // Convert to JPEG with 80% quality
-            .toBuffer();
-
-        // Apply blur effect directly using sharp
-        const blurredImage = await sharp(resizedImage)
-            .blur(10) // Blur radius of 10
-            .toBuffer();
-
-        // Send the blurred image
+    // STEP 1: Get the image to blur
+    if (quotedMessage) {
+      if (!quotedMessage.imageMessage) {
         await sock.sendMessage(chatId, {
-            image: blurredImage,
-            caption: '*[ ✔ ] Image Blurred Successfully*',
-            contextInfo: {
-                forwardingScore: 1,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
-                    serverMessageId: -1
-                }
-            }
+          text: '❌ Tafadhali reply kwa picha ama tumia caption `.blur` kwa image message.'
         });
+        return;
+      }
 
-    } catch (error) {
-        console.error('Error in blur command:', error);
-        await sock.sendMessage(chatId, { 
-            text: '❌ Failed to blur image. Please try again later.' 
-        });
+      const quoted = {
+        message: {
+          imageMessage: quotedMessage.imageMessage
+        }
+      };
+
+      imageBuffer = await downloadMediaMessage(quoted, 'buffer', {}, {});
+    } else if (message.message?.imageMessage) {
+      imageBuffer = await downloadMediaMessage(message, 'buffer', {}, {});
+    } else {
+      await sock.sendMessage(chatId, {
+        text: '❌ Reply kwa image ama tuma image na caption `.blur`'
+      });
+      return;
     }
+
+    // STEP 2: Process image with Jimp
+    const image = await Jimp.read(imageBuffer);
+    image
+      .resize(800, Jimp.AUTO)      // Resize to width max 800px
+      .blur(10)                    // Apply blur
+      .quality(80);                // Reduce size & optimize
+
+    const blurredBuffer = await image.getBufferAsync(Jimp.MIME_JPEG);
+
+    // STEP 3: Upload to uguu.se CDN
+    const form = new FormData();
+    form.append('files[]', blurredBuffer, { filename: 'blurred.jpg' });
+
+    const uploadResponse = await axios.post('https://uguu.se/upload.php', form, {
+      headers: {
+        ...form.getHeaders(),
+        'User-Agent': 'BeltahBot'
+      }
+    });
+
+    const fileUrl = uploadResponse.data.files[0]; // This is the public URL
+
+    // STEP 4: Send public link via WhatsApp
+    await sock.sendMessage(chatId, {
+      text: `✅ *Blurred Image Link:*\n${fileUrl}`,
+      contextInfo: {
+        forwardingScore: 1,
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: '120363161513058998@newsletter',
+          newsletterName: 'BeltahBot',
+          serverMessageId: -1
+        }
+      }
+    });
+
+  } catch (error) {
+    console.error('Error in blur command:', error);
+    await sock.sendMessage(chatId, {
+      text: '❌ Failed to blur or upload image. Jaribu tena baadaye.'
+    });
+  }
 }
 
-module.exports = blurCommand; 
+module.exports = blurCommand;

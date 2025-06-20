@@ -1,156 +1,75 @@
-const { downloadMediaMessage } = require('@whiskeysockets/baileys');
-const { exec } = require('child_process');
+const {
+  downloadMediaMessage
+} = require('@whiskeysockets/baileys');
 const fs = require('fs');
 const path = require('path');
-const settings = require('../settings');
-const webp = require('node-webpmux');
-const crypto = require('crypto');
+const { exec } = require('child_process');
 
-async function stickerCommand(sock, chatId, message) {
-    let mediaMessage;
-
-    if (message.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
-        const quoted = message.message.extendedTextMessage.contextInfo;
-        mediaMessage = quoted.quotedMessage.imageMessage || quoted.quotedMessage.videoMessage || quoted.quotedMessage.documentMessage;
-    
-        message = {
-            key: {
-                remoteJid: chatId,
-                fromMe: false,
-                id: quoted.stanzaId,
-                participant: quoted.participant || chatId
-            },
-            message: quoted.quotedMessage
-        };
-    } else {
-        mediaMessage = message.message?.imageMessage || message.message?.videoMessage || message.message?.documentMessage;
-    }
-    
-
-    if (!mediaMessage) {
-        await sock.sendMessage(chatId, { 
-            text: 'Please reply to an image, video or GIF to create a sticker.',
-            contextInfo: {
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
-                    serverMessageId: -1
-                }
-            }
-        },{ quoted: message });
-        return;
-    }
-
+module.exports = {
+  name: 'sticker',
+  alias: ['stik', 'skt'],
+  desc: '🎭 Tuma picha ama video, nitakurushia stika safi kabisa!',
+  category: 'media',
+  use: '<reply image/video>',
+  cooldown: 5,
+  async execute(m, sock, text, args) {
     try {
-        const mediaBuffer = await downloadMediaMessage(message, 'buffer', {}, { 
-            logger: undefined, 
-            reuploadRequest: sock.updateMediaMessage 
+      const quoted = m.quoted ? m.quoted : m;
+      const mime = (quoted.msg || quoted).mimetype || '';
+
+      if (!mime.includes('image') && !mime.includes('video')) {
+        return m.reply('⚠️ Bro, reply na picha ama video fupi ndo nikutengenezee sticker 🔄');
+      }
+
+      m.reply('⏳ Weka tu hapo, Belta anaandaa stika yako...');
+
+      const mediaPath = path.join(__dirname, '../../temp', `${Date.now()}`);
+      const extension = mime.includes('image') ? '.jpg' : '.mp4';
+      const inputPath = mediaPath + extension;
+      const outputPath = mediaPath + '.webp';
+
+      // Download media
+      const mediaBuffer = await downloadMediaMessage(quoted, 'buffer', {}, { reuploadRequest: sock });
+      fs.writeFileSync(inputPath, mediaBuffer);
+
+      // Convert to WebP using GIMP or fallback (ffmpeg)
+      if (mime.includes('image')) {
+        exec(`gimp -i -b '(let* ((img (car (gimp-file-load RUN-NONINTERACTIVE "${inputPath}" "${inputPath}"))) (drawable (car (gimp-image-get-active-layer img)))) (file-webp-save RUN-NONINTERACTIVE img drawable "${outputPath}" "${outputPath}" 0 1 0 0))' -b '(gimp-quit 0)'`, async (err) => {
+          if (err || !fs.existsSync(outputPath)) {
+            console.error('GIMP error:', err);
+            return m.reply('💔 Pole boss, stika imekata kutengenezwa. Try tena baadaye.');
+          }
+
+          const stickerBuffer = fs.readFileSync(outputPath);
+          await sock.sendMessage(m.chat, {
+            sticker: stickerBuffer
+          }, { quoted: m });
+
+          fs.unlinkSync(inputPath);
+          fs.unlinkSync(outputPath);
         });
 
-        if (!mediaBuffer) {
-            await sock.sendMessage(chatId, { 
-                text: 'Failed to download media. Please try again.',
-                contextInfo: {
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363161513685998@newsletter',
-                        newsletterName: 'KnightBot MD',
-                        serverMessageId: -1
-                    }
-                }
-            });
-            return;
-        }
+      } else if (mime.includes('video')) {
+        // Limit video duration
+        exec(`ffmpeg -i "${inputPath}" -vf "scale=320:320:force_original_aspect_ratio=decrease" -t 8 -r 15 -an -c:v libwebp -loop 0 -preset default -y "${outputPath}"`, async (err) => {
+          if (err || !fs.existsSync(outputPath)) {
+            console.error('FFmpeg error:', err);
+            return m.reply('😵‍💫 Aki video yako imegoma kubadilika. Hakikisha haizidi 8 seconds!');
+          }
 
-        // Create temp directory if it doesn't exist
-        const tmpDir = path.join(process.cwd(), 'tmp');
-        if (!fs.existsSync(tmpDir)) {
-            fs.mkdirSync(tmpDir, { recursive: true });
-        }
+          const stickerBuffer = fs.readFileSync(outputPath);
+          await sock.sendMessage(m.chat, {
+            sticker: stickerBuffer
+          }, { quoted: m });
 
-        // Generate temp file paths
-        const tempInput = path.join(tmpDir, `temp_${Date.now()}`);
-        const tempOutput = path.join(tmpDir, `sticker_${Date.now()}.webp`);
-
-        // Write media to temp file
-        fs.writeFileSync(tempInput, mediaBuffer);
-
-        // Check if media is animated (GIF or video)
-        const isAnimated = mediaMessage.mimetype?.includes('gif') || 
-                          mediaMessage.mimetype?.includes('video') || 
-                          mediaMessage.seconds > 0;
-
-        // Convert to WebP using ffmpeg with optimized settings for animated/non-animated
-        const ffmpegCommand = isAnimated
-            ? `ffmpeg -i "${tempInput}" -vf "scale=512:512:force_original_aspect_ratio=decrease,fps=15,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=#00000000" -c:v libwebp -preset default -loop 0 -vsync 0 -pix_fmt yuva420p -quality 75 -compression_level 6 "${tempOutput}"`
-            : `ffmpeg -i "${tempInput}" -vf "scale=512:512:force_original_aspect_ratio=decrease,format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=#00000000" -c:v libwebp -preset default -loop 0 -vsync 0 -pix_fmt yuva420p -quality 75 -compression_level 6 "${tempOutput}"`;
-
-        await new Promise((resolve, reject) => {
-            exec(ffmpegCommand, (error) => {
-                if (error) {
-                    console.error('FFmpeg error:', error);
-                    reject(error);
-                } else resolve();
-            });
+          fs.unlinkSync(inputPath);
+          fs.unlinkSync(outputPath);
         });
-
-        // Read the WebP file
-        const webpBuffer = fs.readFileSync(tempOutput);
-
-        // Add metadata using webpmux
-        const img = new webp.Image();
-        await img.load(webpBuffer);
-
-        // Create metadata
-        const json = {
-            'sticker-pack-id': crypto.randomBytes(32).toString('hex'),
-            'sticker-pack-name': settings.packname || 'KnightBot',
-            'emojis': ['🤖']
-        };
-
-        // Create exif buffer
-        const exifAttr = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
-        const jsonBuffer = Buffer.from(JSON.stringify(json), 'utf8');
-        const exif = Buffer.concat([exifAttr, jsonBuffer]);
-        exif.writeUIntLE(jsonBuffer.length, 14, 4);
-
-        // Set the exif data
-        img.exif = exif;
-
-        // Get the final buffer with metadata
-        const finalBuffer = await img.save(null);
-
-        // Send the sticker
-        await sock.sendMessage(chatId, { 
-            sticker: finalBuffer
-        },{ quoted: message });
-
-        // Cleanup temp files
-        try {
-            fs.unlinkSync(tempInput);
-            fs.unlinkSync(tempOutput);
-        } catch (err) {
-            console.error('Error cleaning up temp files:', err);
-        }
+      }
 
     } catch (error) {
-        console.error('Error in sticker command:', error);
-        await sock.sendMessage(chatId, { 
-            text: 'Failed to create sticker! Try again later.',
-            contextInfo: {
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363161513685998@newsletter',
-                    newsletterName: 'KnightBot MD',
-                    serverMessageId: -1
-                }
-            }
-        });
+      console.error('Sticker command error:', error);
+      m.reply('😢 Belta ameshindwa kutengeneza hii stika. Jaribu tena bro!');
     }
-}
-
-module.exports = stickerCommand;
+  }
+};
