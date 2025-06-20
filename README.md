@@ -1,3 +1,4 @@
+
 <!-- 🔥 MAIN BANNER HEADING with AUTO-TYPE -->
 <h1 align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=36&duration=4000&pause=1500&color=F79507&center=true&vCenter=true&width=800&lines=🤖+WELCOME+TO+BELTAHBOT-MD" alt="BeltaBot Main Header" />
@@ -13,97 +14,139 @@
   <img src="https://img.shields.io/github/watchers/IshaqIbrahim/BeltahBot-MD?style=social" />
 </p>
 
-<!-- 🪪 BELTAHBOT ID SECTION - Animated, spaced, readable -->
-<h2 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=5000&pause=2000&color=F79507&center=true&vCenter=true&width=800&lines=💳+BeltaBot+ID+Activated..." alt="BeltaBot ID Typing" />
-</h2>
+---
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=5500&pause=2000&color=F79507&center=true&vCenter=true&multiline=true&width=800&lines=🤖+Name%3A+BeltaBot-MD;📱+Linked+to%3A+%2B254+741+819+582;👑+Owner%3A+Ishaq+Ibrahim;🧠+AI+Stack%3A+Gminae+✊+CrewDrew+➡️+ChatGPT;🔐+Mode%3A+Public+|+Locked+to+your+ID" alt="BeltaBot Info Typing" />
-</p>
+## 💳 BeltahBot ID
+```txt
+🤖 Name     : BeltahBot-MD
+📱 Linked   : +254 741 819 582
+👑 Owner    : Ishaq Ibrahim
+🧠 AI Stack : Gminae ✊ CrewDrew ➡️ ChatGPT
+🔐 Mode     : Public | Locked to your WhatsApp ID
 
 <p align="center">
   <a href="https://www.youtube.com/@beltahtech"><img src="https://img.shields.io/badge/Subscribe-red?style=for-the-badge&logo=youtube" /></a>
   <a href="https://github.com/IshaqIbrahim/BeltahBot-MD/fork"><img src="https://img.shields.io/badge/Fork%20Repo-00b0e8?style=for-the-badge&logo=github" /></a>
-  <a href="https://app.koyeb.com/"><img src="https://img.shields.io/badge/Deploy%20on-Koyeb-blueviolet?style=for-the-badge&logo=server" /></a>
+  <a href="https://wa.me/254741819582"><img src="https://img.shields.io/badge/Contact%20Owner-25D366?style=for-the-badge&logo=whatsapp" /></a>
 </p>
-
 ---
 
-## 🚀 Easy 3-Step Setup
+🧠 Features (Beltah Mode Activated)
 
-_Quick and colourful step-by-step instructions to get BeltahBot running on your own system!_
-
-### ⭐ Star This Repo  
-Help us grow and stay updated with the latest.
-
-### 🍴 Fork this Repo  
-Make your own copy and get started.
-
----
-
-## 🆔 Get Your Session ID:
-
-🔎 [PAIR_CODE_1](https://beltah-bot-md-orcy.vercel.app/api/paircode1)
-🔎 [PAIR_CODE_2](https://beltah-bot-md-orcy.vercel.app/api/paircode2)
-🟢 [SCAN_QR_1](https://beltah-bot-md-orcy.vercel.app/api/scanqr1)
-🟢 [SCAN_QR_2](https://beltah-bot-md-orcy.vercel.app/api/scanqr2)  
-- [🔗 BELTAH TECH SITE](https://beltah.vercel.app)
-
-> **📌 Copy your Session ID** and keep it safe — you’ll use it during deployment.
-
----
-## 🚀 Deploy BeltahBot on Free Platforms
-
-Deploy easily with any of the following trusted platforms:
-
-- [🚀 Deploy on Koyeb](https://app.koyeb.com/)
-- [💻 Deploy on Glitch](https://glitch.com/edit/#!/import/git)
-- [🌐 Deploy on Zeabur](https://zeabur.com)
-
-> These platforms support Node.js apps with session-based auth.
-
----
-
-## 🧠 Latest Updates & Features
 <details>
-<summary>Click to Expand</summary>
+<summary>Click to Expand</summary>AI Stack: Gminae ➜ CrewDrew ➜ ChatGPT
 
-- AI Stack: Gminae ➜ CrewDrew ➜ ChatGPT  
-- Admin controls for WhatsApp groups  
-- Personality Modes: Polite, Romantic, Kiswahili Slang  
-- Built-in sticker, photo, and media tools using GIMP (NO SHARP)  
-- Anti-spam and Auto-Rate Limit  
+WhatsApp group admin tools
+
+Chatbot modes (Polite, Romantic, Kiswahili Slang)
+
+Media tools with GIMP (No SHARP)
+
+Emojis, slang, fun vibes 💬
+
+Anti-spam and auto rate limiting
+
+Custom sticker maker, YouTube downloader, audio tools
+
+Full offline/local deployment on Tamax
+
+Session saving supported
+
 
 </details>
+---
+
+🚀 Setup BeltahBot on Tamax (100% Offline)
+
+Follow these steps to get BeltahBot running on Tamax (StarMax or similar):
+
+1️⃣ Clone the Repo
+
+git clone https://github.com/IshaqIbrahim/BeltahBot-MD
+cd BeltahBot-MD
+
+2️⃣ Install Dependencies
+
+npm install
+
+3️⃣ Prepare Your Session
+
+If you already have a session file (auth_info_multi.json), copy it to the bot folder.
+
+If not, run the bot and scan the QR locally once using WhatsApp > Linked Devices.
+
+
+4️⃣ Start the Bot (Tamax)
+
+bash start.sh
+# OR
+npm run tamax
+
 
 ---
 
-## ⚠️ Disclaimer
+📦 Example .env File
 
-> Copying or modifying this script is **not allowed** without permission.  
-> No support will be provided for modified or resold versions.
+OWNER_NAME=Ishaq Ibrahim
+OWNER_EMAIL=isaac0maina@gmail.com
+BELTAH_PHONE=+254741819582
+BOT_NAME=BeltahBot
+CHATGPT_KEY=your_chatgpt_key
+GMNAE_KEY=your_gminae_key
+CREWDREW_KEY=your_dalle_key
 
----
+> Never share your .env or session file online. Keep them safe!
 
-## 🤝 Help & Support
 
-Need help installing or running BeltahBot?
 
-📞 [MESSAGE ON WHATSAPP](https://wa.me/254741819582)
-
----
-
-## 💬 Special Thanks To
-
-- **@adiwajshing** – For the Baileys Library  
-- **@Ishaq Ibrahim** – Owner & Maintainer of BeltahBot  
-- **❤️Contributors** – Thank you for your ideas and effort  
-- **💚You** – For choosing Beltah!
 
 ---
 
-## 🔋 Powered By:
+🧠 Tech Stack
 
-`Gminae → CrewDrew → ChatGPT`  
-_A fully trained ecosystem, ready to vibe._
+Baileys Library by @adiwajshing
+Node.js + Tamax CLI Runtime
+AI Engines: Gminae × CrewDrew × ChatGPT
+Session Store: auth_info_multi.json (secure offline file)
+
+
+---
+
+🤝 Help & Support
+
+Need help running BeltahBot or pairing your WhatsApp?
+
+📞 Click to Message Beltah Support on WhatsApp
+
+
+---
+
+🔒 Disclaimer
+
+This bot is intended for personal and educational use only.
+Resale or commercial cloning is not permitted without permission.
+
+
+---
+
+🙏 Special Thanks
+
+@adiwajshing – Baileys Lib
+
+@Ishaq Ibrahim – Creator of BeltahBot
+
+All Beltah supporters and testers
+
+❤️ You – for deploying locally and keeping it offline 💪
+
+
+
+---
+
+🔋 Powered by:
+
+Gminae → CrewDrew → ChatGPT
+
+Your offline AI-powered WhatsApp bot, done right.
+
+---
