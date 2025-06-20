@@ -15,11 +15,11 @@
 ---
 
 <h2 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1200&color=E4405F&center=true&vCenter=true&width=900&lines=📸+Follow+Me+On+Instagram+@toxic__a.a.n.t" alt="Follow on Instagram Animation" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1200&color=E4405F&center=true&vCenter=true&width=900&lines=📸+Follow+Me+On+Instagram+@TOXIC._A.N.T" alt="Follow on Instagram Animation" />
 </h2>
 
 <p align="center">
-  <a href="https://instagram.com/toxic__a.a.n.t"><img src="https://img.shields.io/badge/Follow%20on%20Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
+  <a href="https://instagram.com/toxic._a.n.t"><img src="https://img.shields.io/badge/Follow%20on%20Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
 </p>
 
 ---
@@ -129,7 +129,7 @@ Having trouble or want help setting up?
 - 💻 `@Ishaq Ibrahim` – Developer & Maintainer  
 - 🧠 `@adiwajshing` – Baileys Library Creator  
 - 🌀 `Tamax Team` – For backend deployment support  
-- 📸 `@toxic__a.a.n.t` – Follow me on IG for updates & vibes  
+- 📸 `@TOXIC._A.N.T` – Official IG Handle – Follow for updates 🔥  
 - 💚 `You` – For supporting BeltahBot-MD & offline AI projects!
 
 ---
