@@ -1,5 +1,5 @@
-h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=36&duration=4000&pause=1500&color=F79507&center=true&vCenter=true&width=800&lines=🤖+WELCOME+TO+BELTAHBOT-MD" alt="BeltaBot Main Header" />
+<h1 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=36&duration=3500&pause=1500&color=0AFFB5&center=true&vCenter=true&width=1000&lines=🤖+BELTAHBOT-MD+IS+ALIVE!;🔥+The+Ultimate+Offline+WhatsApp+Bot;🚀+Powered+by+Tamax+and+AI+Triforce!;" alt="BeltahBot Typing Header" />
 </h1>
 
 <p align="center">
@@ -14,35 +14,27 @@ h1 align="center">
 
 ---
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Season-2%20Tamax%20Rebuild-9146FF?style=for-the-badge&logo=whatsapp" />
-  <img src="https://img.shields.io/badge/Bot%20Mode-Public-green?style=for-the-badge&logo=checkmarx" />
-  <img src="https://img.shields.io/badge/AI%20Engine-Gminae→CrewDrew→ChatGPT-FF5722?style=for-the-badge&logo=openai" />
-</p>
+### 🌀 **Season 2: Tamax Rebuild**
+
+> _“Back stronger. Now fully offline + 100% AI!”_
+
+- 📅 **Release:** June 2025  
+- 🔁 **Version:** `v2.0.0-tamax`  
+- 📞 **Locked To:** `+254 741 819 582`  
+- 🧠 **Powered By:** `Gminae → CrewDrew → ChatGPT`  
+- 👑 **Maintained by:** `Ishaq Ibrahim`
 
 ---
 
-## 🌀 BeltahBot — *Season 2: Tamax Rebuild* 🚀
+### 💳 BeltahBot Identity
 
-> _"Back stronger. Now powered by Tamax."_
-
-📆 **Release Date**: June 2025  
-🔁 **Version**: `v2.0.0-tamax`  
-📍 **Status**: `Active | Public Mode`  
-🔐 **Locked To**: `+254 741 819 582`  
-👑 **Owner**: `Ishaq Ibrahim`
-
----
-
-## 💳 BeltahBot ID Card
-
-| 🪪 Feature       | 🟢 Details                        |
-|------------------|----------------------------------|
-| 🤖 Bot Name       | `BeltahBot-MD`                   |
-| 📱 WhatsApp Link  | `+254 741 819 582`               |
-| 👑 Owner          | `Ishaq Ibrahim`                  |
-| 🧠 AI Stack       | `Gminae ✊ CrewDrew ➡️ ChatGPT`   |
-| 🔐 Mode           | `Public | Fully Locked`          |
+| Detail         | Info                        |
+|----------------|-----------------------------|
+| 🤖 Bot Name     | BeltahBot-MD                |
+| 📱 Phone Number | +254 741 819 582            |
+| 👑 Owner        | Ishaq Ibrahim               |
+| 🔐 Mode         | Public & Secure             |
+| 🧠 AI Stack     | Gminae → CrewDrew → ChatGPT |
 
 <p align="center">
   <a href="https://www.youtube.com/@beltahtech"><img src="https://img.shields.io/badge/Subscribe-red?style=for-the-badge&logo=youtube" /></a>
@@ -52,120 +44,91 @@ h1 align="center">
 
 ---
 
-## ✨ Features Overview
+### ⚙️ How to Set Up on Tamax
 
-✅ Group Admin Tools: kick, ban, mute, promote  
-💬 Multi-Mode Chatbot: Romantic, Polite, Kiswahili slang  
-🖼️ Media Tools: GIMP stickers, audio, image filters  
-📵 Anti-Spam, Rate Limiting & Smart Filtering  
-📦 Offline-Ready: Built for full **Tamax** deployment  
-🎨 Stylish visual menu with image-based categories
+🔧 **Step-by-step Setup (no code needed):**
 
----
+1. 📥 Clone this repository from GitHub  
+2. 📂 Enter the `BeltahBot-MD` folder  
+3. 🧩 Install all required files (auto from `package.json`)  
+4. 🚀 Run `start.sh` or use Tamax deployment button  
+5. 📲 Pair your WhatsApp number (one-time only)
 
-## 🚀 How to Deploy on Tamax
-
-⚙️ Simple setup for 100% offline use
-
-```bash
-git clone https://github.com/IshaqIbrahim/BeltahBot-MD
-cd BeltahBot-MD
-npm install
-bash start.sh
-
-> 🔑 First run will prompt you to pair your WhatsApp account.
-
-
-
+> That’s it! Your BeltahBot will now run offline on Tamax and wait for commands 🔥
 
 ---
 
-🔐 Your .env Should Contain
+### 🔐 `.env` Configuration (Just Fill This)
 
-Add this file and update the values:
+Fill in the following keys inside a `.env` file:
 
-OWNER_NAME=Ishaq Ibrahim
-OWNER_EMAIL=isaac0maina@gmail.com
-BELTAH_PHONE=+254741819582
-BOT_NAME=BeltahBot
-CHATGPT_KEY=your_chatgpt_key
-GMNAE_KEY=your_gminae_key
-CREWDREW_KEY=your_dalle_key
+- `OWNER_NAME=Ishaq Ibrahim`  
+- `OWNER_EMAIL=isaac0maina@gmail.com`  
+- `BELTAH_PHONE=+254741819582`  
+- `BOT_NAME=BeltahBot`  
+- `CHATGPT_KEY=your_chatgpt_key_here`  
+- `GMNAE_KEY=your_gminae_key_here`  
+- `CREWDREW_KEY=your_dalle_key_here`
 
-🛑 Do not share this file online.
-
-
----
-
-🧠 Tech Stack
-
-Stack	Purpose
-
-Node.js	Backend runtime engine
-Baileys	WhatsApp Web Socket API
-Gminae	Intent & mood detection AI
-CrewDrew	DALL·E-style image generation
-ChatGPT	Final message and response logic
-GIMP	Local media & image processing
-
-
+🛑 **Important:** Don’t upload or share your `.env` file publicly!
 
 ---
 
-📞 Need Help?
+### 🧠 Tech Behind BeltahBot
 
-💬 Installation support or pairing issues?
-
-> 👉 Tap here to chat with Beltah Support on WhatsApp
-
-
-
-
----
-
-⚠️ Disclaimer
-
-📚 This bot is for educational/personal use only.
-
-❌ Do not resell, rehost, or spam using this script.
-
-🔒 You must obtain permission to distribute clones.
-
-
+| Tech         | Used For                                |
+|--------------|------------------------------------------|
+| Node.js      | Bot runtime engine                       |
+| Baileys      | WhatsApp API integration                 |
+| Gminae       | Intent AI / character logic              |
+| CrewDrew     | Image generation (DALL·E-style)          |
+| ChatGPT      | Final reply rendering and tone control   |
+| GIMP         | Sticker/image conversion and effects     |
 
 ---
 
-🙌 Special Thanks
+### 🔥 Features at a Glance
 
-🧠 @adiwajshing – Baileys API Library
-
-💻 @Ishaq Ibrahim – Developer of BeltahBot
-
-🌀 BeltaTech Team – For beta testing
-
-🙏 You – For using BeltahBot-MD and supporting Tamax Devs!
-
-
+- ✅ Admin Tools: kick, ban, mute, promote  
+- 💬 Romantic, polite, and sheng’ chatbot replies  
+- 🖼️ Media tools: stickers, video, GIMP-enhanced images  
+- 🚫 Rate Limiting + Anti-Spam  
+- 📦 100% Offline Operation via **Tamax**  
+- 🎨 Stylish menu with image-based sections
 
 ---
 
-🔋 Powered By
+### 🆘 Support & Contact
 
-Gminae ✊ → CrewDrew 🖼️ → ChatGPT 🧠
+Having trouble or want help setting up?
 
-> Your AI-powered, offline WhatsApp bot — done right with Tamax ⚡
-
-
-
+> 👉 [Chat with Beltah Support on WhatsApp](https://wa.me/254741819582)
 
 ---
 
+### ⚠️ Disclaimer
+
+- 🧪 This bot is **for educational/personal use only**  
+- 🚫 Don’t resell, spam, or repost without permission  
+- 🔐 BeltahBot is protected and locked to its owner’s identity
+
 ---
 
-### ✅ You Can Now:
-- Copy this into your `README.md`
-- Commit and push it to GitHub
-- And **BeltahBot-MD** will look sharp, seasonal, and fully Tamax-ready!
+### 🙌 Special Thanks
 
-Would you also like me to stylize the LICENSE or CREDITS file next to match this style?
+- 💻 `@Ishaq Ibrahim` – Developer & Maintainer  
+- 🧠 `@adiwajshing` – Baileys Library Creator  
+- 🌀 `Tamax Team` – For backend deployment support  
+- 💚 `You` – For supporting BeltahBot-MD & offline AI projects!
 
+---
+
+### 🔋 Powered by:
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Gminae-Intent%20AI-orange?style=for-the-badge&logo=openai" />
+  <img src="https://img.shields.io/badge/CrewDrew-DALL·E%20Style-blue?style=for-the-badge&logo=docker" />
+  <img src="https://img.shields.io/badge/ChatGPT-Final%20Reply%20Engine-green?style=for-the-badge&logo=chatgpt" />
+</p>
+
+> _The AI Triforce behind every BeltahBot response_ 🤖
