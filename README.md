@@ -25,7 +25,7 @@
 <p align="center">
   <a href="https://www.youtube.com/@beltahtech"><img src="https://img.shields.io/badge/Subscribe-red?style=for-the-badge&logo=youtube" /></a>
   <a href="https://github.com/IshaqIbrahim/BeltahBot-MD/fork"><img src="https://img.shields.io/badge/Fork%20Repo-00b0e8?style=for-the-badge&logo=github" /></a>
-  <a href="https://railway.app"><img src="https://img.shields.io/badge/VISIT%20Website-0d1117?style=for-the-badge&logo=firefox-browser" /></a>
+  <a href="https://app.koyeb.com/"><img src="https://img.shields.io/badge/Deploy%20on-Koyeb-blueviolet?style=for-the-badge&logo=server" /></a>
 </p>
 
 ---
@@ -53,14 +53,13 @@ Make your own copy and get started.
 > **📌 Copy your Session ID** and keep it safe — you’ll use it during deployment.
 
 ---
-
 ## 🚀 Deploy BeltahBot on Free Platforms
 
 Deploy easily with any of the following trusted platforms:
 
-- [⚡Deploy on Railway](https://railway.app/new)
-- [⚡Deploy on Glitch](https://glitch.com/edit/#!/import/git)
-- [⚡Deploy on Zeabur](https://zeabur.com)
+- [🚀 Deploy on Koyeb](https://app.koyeb.com/)
+- [💻 Deploy on Glitch](https://glitch.com/edit/#!/import/git)
+- [🌐 Deploy on Zeabur](https://zeabur.com)
 
 > These platforms support Node.js apps with session-based auth.
 
