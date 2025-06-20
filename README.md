@@ -44,10 +44,10 @@ Make your own copy and get started.
 
 ## 🆔 Get Your Session ID:
 
-- [🔗 PAIR_CODE_1](https://beltah.vercel.app/paircode1)  
-- [🔗 PAIR_CODE_2](https://beltah.vercel.app/paircode2)  
-- [🟢 SCAN_QR_1](https://beltah.vercel.app/scanqr1)  
-- [🟢 SCAN_QR_2](https://beltah.vercel.app/scanqr2)  
+🔎 [PAIR_CODE_1](https://beltah-bot-md-orcy.vercel.app/api/paircode1)
+🔎 [PAIR_CODE_2](https://beltah-bot-md-orcy.vercel.app/api/paircode2)
+🟢 [SCAN_QR_1](https://beltah-bot-md-orcy.vercel.app/api/scanqr1)
+🟢 [SCAN_QR_2](https://beltah-bot-md-orcy.vercel.app/api/scanqr2)  
 - [🔗 BELTAH TECH SITE](https://beltah.vercel.app)
 
 > **📌 Copy your Session ID** and keep it safe — you’ll use it during deployment.
