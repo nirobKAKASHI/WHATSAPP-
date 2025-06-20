@@ -1,10 +1,10 @@
 export default function handler(req, res) {
   res.status(200).send(`
     <html>
-      <head><title>Pair Code 1</title></head>
-      <body style="text-align:center;font-family:sans-serif;">
+      <head><title>BeltahBot - Pair Code 1</title></head>
+      <body style="font-family:sans-serif;text-align:center;padding-top:50px;">
         <h2>🔐 Pair Code 1</h2>
-        <p>Coming soon... BeltahBot pairing system will display code here.</p>
+        <p>Your WhatsApp pairing code will appear here when the bot is connected.</p>
       </body>
     </html>
   `);
