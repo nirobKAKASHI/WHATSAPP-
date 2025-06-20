@@ -14,19 +14,29 @@
 
 ---
 
-### 🌀 **Season 2: Tamax Rebuild**
+<h2 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1200&color=E4405F&center=true&vCenter=true&width=900&lines=📸+Follow+Me+On+Instagram+@TOXIC._A.N.T" alt="Follow on Instagram Animation" />
+</h2>
 
-> _“Back stronger. Now fully offline + 100% AI!”_
-
-- 📅 **Release:** June 2025  
-- 🔁 **Version:** `v2.0.0-tamax`  
-- 📞 **Locked To:** `+254 741 819 582`  
-- 🧠 **Powered By:** `Gminae → CrewDrew → ChatGPT`  
-- 👑 **Maintained by:** `Ishaq Ibrahim`
+<p align="center">
+  <a href="https://instagram.com/toxic._a.n.t"><img src="https://img.shields.io/badge/Follow%20on%20Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
+</p>
 
 ---
 
-### 💳 BeltahBot Identity
+### 🌀 <b>Season 2: Tamax Rebuild</b>
+
+> _“Back stronger. Now fully offline + 100% AI!”_
+
+- 📅 <b>Release:</b> June 2025  
+- 🔁 <b>Version:</b> `v2.0.0-tamax`  
+- 📞 <b>Locked To:</b> `+254 741 819 582`  
+- 🧠 <b>Powered By:</b> `Gminae → CrewDrew → ChatGPT`  
+- 👑 <b>Maintained by:</b> `Ishaq Ibrahim`
+
+---
+
+### 💳 <b>BeltahBot Identity</b>
 
 | Detail         | Info                        |
 |----------------|-----------------------------|
@@ -44,9 +54,9 @@
 
 ---
 
-### ⚙️ How to Set Up on Tamax
+### ⚙️ <b>How to Set Up on Tamax</b>
 
-🔧 **Step-by-step Setup (no code needed):**
+🔧 <b>Step-by-step Setup (no code needed):</b>
 
 1. 📥 Clone this repository from GitHub  
 2. 📂 Enter the `BeltahBot-MD` folder  
@@ -58,7 +68,7 @@
 
 ---
 
-### 🔐 `.env` Configuration (Just Fill This)
+### 🔐 <b>.env Configuration</b>
 
 Fill in the following keys inside a `.env` file:
 
@@ -70,11 +80,11 @@ Fill in the following keys inside a `.env` file:
 - `GMNAE_KEY=your_gminae_key_here`  
 - `CREWDREW_KEY=your_dalle_key_here`
 
-🛑 **Important:** Don’t upload or share your `.env` file publicly!
+🛑 <b>Important:</b> Don’t upload or share your `.env` file publicly!
 
 ---
 
-### 🧠 Tech Behind BeltahBot
+### 🧠 <b>Tech Behind BeltahBot</b>
 
 | Tech         | Used For                                |
 |--------------|------------------------------------------|
@@ -87,7 +97,7 @@ Fill in the following keys inside a `.env` file:
 
 ---
 
-### 🔥 Features at a Glance
+### 🔥 <b>Features at a Glance</b>
 
 - ✅ Admin Tools: kick, ban, mute, promote  
 - 💬 Romantic, polite, and sheng’ chatbot replies  
@@ -98,15 +108,15 @@ Fill in the following keys inside a `.env` file:
 
 ---
 
-### 🆘 Support & Contact
+### 🆘 <b>Support & Contact</b>
 
 Having trouble or want help setting up?
 
-> 👉 [Chat with Beltah Support on WhatsApp](https://wa.me/254741819582)
+👉 <b><a href="https://wa.me/254741819582">Chat with Beltah Support on WhatsApp</a></b>
 
 ---
 
-### ⚠️ Disclaimer
+### ⚠️ <b>Disclaimer</b>
 
 - 🧪 This bot is **for educational/personal use only**  
 - 🚫 Don’t resell, spam, or repost without permission  
@@ -114,16 +124,17 @@ Having trouble or want help setting up?
 
 ---
 
-### 🙌 Special Thanks
+### 🙌 <b>Special Thanks</b>
 
 - 💻 `@Ishaq Ibrahim` – Developer & Maintainer  
 - 🧠 `@adiwajshing` – Baileys Library Creator  
 - 🌀 `Tamax Team` – For backend deployment support  
+- 📸 `@TOXIC._A.N.T` – Official IG Handle – Follow for updates 🔥  
 - 💚 `You` – For supporting BeltahBot-MD & offline AI projects!
 
 ---
 
-### 🔋 Powered by:
+### 🔋 <b>Powered by:</b>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Gminae-Intent%20AI-orange?style=for-the-badge&logo=openai" />
