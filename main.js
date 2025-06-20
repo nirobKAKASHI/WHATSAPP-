@@ -1,157 +1,71 @@
 // Author: Ishaq Ibrahim
-
+// Command: .menu
 // AI Stack: Gminae × CrewDrew × ChatGPT
 
 const fs = require('fs');
-
 const path = require('path');
 
-const { downloadMediaMessage } = require('@whiskeysockets/baileys');
-
-// Command Imports
-
-const {
-
-  simageCommand, kickCommand, muteCommand, unmuteCommand, banCommand, unbanCommand,
-
-  helpCommand, stickerCommand, warnCommand, warningsCommand, deleteCommand,
-
-  attpCommand, ownerCommand, tagAllCommand, tagCommand, memeCommand, jokeCommand,
-
-  quoteCommand, factCommand, weatherCommand, newsCommand, tictactoeCommand,
-
-  tictactoeMove, complimentCommand, insultCommand, eightBallCommand, lyricsCommand,
-
-  simpCommand, stupidCommand, dareCommand, truthCommand, clearCommand,
-
-  promoteCommand, demoteCommand, pingCommand, aliveCommand, blurCommand,
-
-  welcomeCommand, goodbyeCommand, githubCommand, antibadwordCommand,
-
-  handleChatbotCommand, characterCommand, flirtCommand, wastedCommand,
-
-  shipCommand, groupInfoCommand, resetlinkCommand, staffCommand, emojimixCommand,
-
-  stickerTelegramCommand, viewOnceCommand, clearSessionCommand, autoStatusCommand,
-
-  textmakerCommand, handleAntideleteCommand, handleSsCommand, handleTranslateCommand,
-
-  handleAreactCommand, shayariCommand, rosedayCommand, imagineCommand,
-
-  aiCommand, playCommand, songCommand, tiktokCommand
-
-} = require('./commands');
-
-// Utility Imports
-
-const {
-
-  handleChatbotResponse, handleBadwordDetection, isAdmin, addCommandReaction,
-
-  isWelcomeOn, isGoodByeOn, handlePromotionEvent, handleDemotionEvent,
-
-  handleStatusUpdate
-
-} = require('./utils');
-
-// AI Engine Imports
-
-const { runGminae, runChatGPT, runCrewDrew } = require('./utils/aiRouter');
-
-// ✅ Main Message Handler
-
-async function handleMessages(sock, message) {
-
+module.exports = async (sock, chatId, message) => {
   try {
+    // Path to the voice intro
+    const voicePath = path.join(__dirname, '../assets/audio/mp3/beltah_intro_voice_ready.mp3');
 
-    const chatId = message.key.remoteJid;
+    // Path to the menu image
+    const imagePath = path.join(__dirname, '../assets/media/beltah_menu.jpg'); // Customize your image path here
 
-    const senderId = message.key.participant || chatId;
-
-    const isGroup = chatId.endsWith('@g.us');
-
-    const rawText = message.message?.conversation ||
-
-                    message.message?.extendedTextMessage?.text ||
-
-                    message.message?.imageMessage?.caption ||
-
-                    message.message?.videoMessage?.caption || '';
-
-    const userMessage = rawText.trim().toLowerCase();
-
-    const channelInfo = {
-
-      contextInfo: {
-
-        externalAdReply: {
-
-          title: 'Beltah 🤖',
-
-          body: 'Powered by Beltah AI Stack (Gminae × CrewDrew × ChatGPT)',
-
-          mediaType: 1
-
-        }
-
-      }
-
-    };
-
-    let isSenderAdmin = false;
-
-    let isBotAdmin = false;
-
-    if (isGroup) {
-
-      const adminStatus = await isAdmin(sock, chatId, senderId, message);
-
-      isSenderAdmin = adminStatus.isSenderAdmin;
-
-      isBotAdmin = adminStatus.isBotAdmin;
-
-      if (
-
-        userMessage.startsWith('.mute') || userMessage === '.unmute' ||
-
-        userMessage.startsWith('.ban') || userMessage === '.unban' ||
-
-        userMessage.startsWith('.promote') || userMessage.startsWith('.demote') ||
-
-        userMessage === '.tagall' || userMessage === '.welcome' || userMessage === '.goodbye'
-
-      ) {
-
-        if (!isBotAdmin) {
-
-          await sock.sendMessage(chatId, { text: '⚠️ Please make *Beltah* an admin first.', ...channelInfo }, { quoted: message });
-
-          return;
-
-        }
-
-        if (!isSenderAdmin && !message.key.fromMe) {
-
-          await sock.sendMessage(chatId, { text: '🚫 Hii command ni ya *admin pekee*.', ...channelInfo });
-
-          return;
-
-        }
-
-      }
-
+    // Send voice intro first (if available)
+    if (fs.existsSync(voicePath)) {
+      await sock.sendMessage(chatId, {
+        audio: fs.readFileSync(voicePath),
+        mimetype: 'audio/mpeg',
+        ptt: true
+      }, { quoted: message });
     }
 
-    // You can continue handling commands here...
+    // Send menu image with caption
+    if (fs.existsSync(imagePath)) {
+      await sock.sendMessage(chatId, {
+        image: fs.readFileSync(imagePath),
+        caption:
+`📜 *BELTAHBOT COMMANDS MENU* 🔥
 
-    // Example:
+✨ *Bot Status:* Live ✅
+🔗 *AI Stack:* Gminae × CrewDrew × ChatGPT
+👑 *Owner:* Ishaq Ibrahim
 
-    // if (userMessage.startsWith('.ping')) await pingCommand(sock, chatId, message);
+🛠️ *Bot Info:*
+.alive | .ping | .menu | .owner | .staff
+
+🎮 *Fun & Games:*
+.joke | .meme | .quote | .dare | .truth | .insult | .flirt | .simp | .compliment | .8ball
+
+🎭 *Media Tools:*
+.play | .song | .tiktok | .lyrics | .blur | .sticker | .attp | .emojimix | .textmaker
+
+🌐 *Chat & AI:*
+.ai | .chatbot | .character | .imagine | .translate | .shayari
+
+👥 *Group Commands:*
+.tagall | .mute | .unmute | .ban | .unban | .kick | .promote | .demote | .welcome | .goodbye | .groupinfo | .resetlink
+
+⚙️ *Admin/Mods:*
+.warn | .warnings | .delete | .clear | .clearsession | .antibadword | .antidelete | .autostatus
+
+📡 *Extras:*
+.github | .weather | .news | .wasted | .ship | .ss | .viewonce
+
+_Try one leo, Beltah iko radaa! 😎_`,
+      }, { quoted: message });
+    } else {
+      await sock.sendMessage(chatId, {
+        text: '⚠️ Menu image haiko. Check your `/assets/media/beltah_menu.jpg` file.',
+      }, { quoted: message });
+    }
 
   } catch (error) {
-
-    console.error('⚠️ Error in handleMessages:', error);
-
+    console.error('🔥 Error in menuCommand:', error);
+    await sock.sendMessage(chatId, {
+      text: '😓 Aki menu imefail ku-load. Check logs.',
+    }, { quoted: message });
   }
-
-}
+};
