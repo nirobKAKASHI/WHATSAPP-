@@ -1,0 +1,9 @@
+module.exports = {
+  appName: "BeltahBot-MD",
+  entryFile: "index.js",
+  autoRestart: true,
+  nodeArgs: ["--max-old-space-size=512"],
+  env: {
+    TZ: "Africa/Nairobi"
+  }
+};
