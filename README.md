@@ -14,6 +14,16 @@
 
 ---
 
+<h2 align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1200&color=E4405F&center=true&vCenter=true&width=900&lines=📸+Follow+Me+On+Instagram+@toxic__a.a.n.t" alt="Follow on Instagram Animation" />
+</h2>
+
+<p align="center">
+  <a href="https://instagram.com/toxic__a.a.n.t"><img src="https://img.shields.io/badge/Follow%20on%20Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
+</p>
+
+---
+
 ### 🌀 <b>Season 2: Tamax Rebuild</b>
 
 > _“Back stronger. Now fully offline + 100% AI!”_
@@ -40,7 +50,6 @@
   <a href="https://www.youtube.com/@beltahtech"><img src="https://img.shields.io/badge/Subscribe-red?style=for-the-badge&logo=youtube" /></a>
   <a href="https://github.com/IshaqIbrahim/BeltahBot-MD/fork"><img src="https://img.shields.io/badge/Fork%20Repo-00b0e8?style=for-the-badge&logo=github" /></a>
   <a href="https://wa.me/254741819582"><img src="https://img.shields.io/badge/Contact%20Owner-25D366?style=for-the-badge&logo=whatsapp" /></a>
-  <a href="https://instagram.com/toxic__a.a.n.t"><img src="https://img.shields.io/badge/Follow%20on%20Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" /></a>
 </p>
 
 ---
@@ -120,6 +129,7 @@ Having trouble or want help setting up?
 - 💻 `@Ishaq Ibrahim` – Developer & Maintainer  
 - 🧠 `@adiwajshing` – Baileys Library Creator  
 - 🌀 `Tamax Team` – For backend deployment support  
+- 📸 `@toxic__a.a.n.t` – Follow me on IG for updates & vibes  
 - 💚 `You` – For supporting BeltahBot-MD & offline AI projects!
 
 ---
