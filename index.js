@@ -11,7 +11,6 @@
 
 require('./bdelta-secure/index.js');
 require('./settings');
-require('./keepalive');
 
 const fs = require('fs');
 const chalk = require('chalk');
