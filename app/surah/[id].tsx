@@ -5,6 +5,7 @@ import { getSurah, type Ayah } from '../../lib/quran';
 import { AudioControls } from '../../components/AudioControls';
 import { GlassCard } from '../../components/GlassCard';
 import { useTranslation } from 'react-i18next';
+import { addAyahCard } from '../../lib/srs';
 
 export default function SurahScreen() {
 	const params = useLocalSearchParams<{ id: string }>();
@@ -41,7 +42,12 @@ export default function SurahScreen() {
 					<GlassCard style={styles.row}>
 						<View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
 							<Text style={styles.ayahNum}>{item.numberInSurah}</Text>
-							<AudioControls surah={surahNumber} ayah={item.numberInSurah} />
+							<View style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}>
+								<Pressable style={styles.deckBtn} onPress={() => addAyahCard(surahNumber, item.numberInSurah)}>
+									<Text style={styles.deckTxt}>Add to Deck</Text>
+								</Pressable>
+								<AudioControls surah={surahNumber} ayah={item.numberInSurah} />
+							</View>
 						</View>
 						<Text style={styles.ar}>{item.text}</Text>
 						<Text style={styles.tr}>{item.translation}</Text>
@@ -64,4 +70,6 @@ const styles = StyleSheet.create({
 	ar: { color: 'white', fontSize: 18, fontFamily: 'Inter_700Bold' },
 	tr: { color: 'white', fontFamily: 'Inter_400Regular' },
 	vocab: { color: 'white', opacity: 0.8, fontFamily: 'Inter_400Regular' },
+	deckBtn: { paddingVertical: 6, paddingHorizontal: 10, backgroundColor: 'rgba(255,255,255,0.15)', borderRadius: 12 },
+	deckTxt: { color: 'white', fontFamily: 'Inter_600SemiBold' },
 });

@@ -25,7 +25,10 @@ export default function RootLayout() {
 		<GestureHandlerRootView style={{ flex: 1 }}>
 			<SafeAreaProvider>
 				<GradientBackground />
-				<Stack screenOptions={{ headerShown: false }} />
+				<Stack screenOptions={{ headerShown: false }}>
+					<Stack.Screen name="(tabs)" />
+					<Stack.Screen name="surah/[id]" />
+				</Stack>
 			</SafeAreaProvider>
 		</GestureHandlerRootView>
 	);
