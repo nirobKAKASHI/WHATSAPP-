@@ -3,6 +3,7 @@ import { View, Pressable, Text, StyleSheet } from 'react-native';
 import { Audio, AVPlaybackStatusSuccess } from 'expo-av';
 import { getAyahAudioUrl } from '../lib/audio';
 import { getLocalUriIfExists } from '../lib/downloads';
+import { usePrefs } from '../lib/prefs';
 
 type Props = { surah: number; ayah: number };
 
@@ -10,6 +11,7 @@ export function AudioControls({ surah, ayah }: Props) {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [rate, setRate] = useState(1);
 	const soundRef = useRef<Audio.Sound | null>(null);
+    const reciter = usePrefs((s) => s.reciter);
 
 	useEffect(() => {
 		return () => { if (soundRef.current) soundRef.current.unloadAsync(); };
@@ -17,7 +19,7 @@ export function AudioControls({ surah, ayah }: Props) {
 
 	const getUrl = async () => {
 		const local = await getLocalUriIfExists(surah, ayah);
-		return local ?? getAyahAudioUrl(surah, ayah);
+		return local ?? getAyahAudioUrl(surah, ayah, reciter);
 	};
 
 	const onPlayPause = async () => {

@@ -9,6 +9,7 @@ import { addAyahCard } from '../../lib/srs';
 import { downloadAyah, getLocalUriIfExists, removeAyah } from '../../lib/downloads';
 import { tokenizeAyah } from '../../lib/morph';
 import { TokenModal } from '../../components/TokenModal';
+import { toggleBookmark, isBookmarked, addNote } from '../../lib/notes';
 
 export default function SurahScreen() {
 	const params = useLocalSearchParams<{ id: string }>();
@@ -76,7 +77,10 @@ export default function SurahScreen() {
 							</View>
 						)}
 						<Text style={styles.tr}>{item.translation}</Text>
-						<Text style={styles.vocab}>{t('ayah.vocab_placeholder')}</Text>
+						<View style={{ flexDirection: 'row', gap: 8 }}>
+							<BookmarkToggle surah={surahNumber} ayah={item.numberInSurah} />
+							<NoteButton surah={surahNumber} ayah={item.numberInSurah} />
+						</View>
 					</GlassCard>
 				)}
 			/>
@@ -95,6 +99,27 @@ function DownloadToggle({ surah, ayah }: { surah: number; ayah: number }) {
 	return (
 		<Pressable style={styles.deckBtn} onPress={onToggle}>
 			<Text style={styles.deckTxt}>{has ? 'Remove' : 'Download'}</Text>
+		</Pressable>
+	);
+}
+
+function BookmarkToggle({ surah, ayah }: { surah: number; ayah: number }) {
+	const [bm, setBm] = useState(false);
+	useEffect(() => { (async () => setBm(await isBookmarked(surah, ayah)))(); }, [surah, ayah]);
+	const onToggle = async () => { await toggleBookmark(surah, ayah); setBm(await isBookmarked(surah, ayah)); };
+	return (
+		<Pressable style={styles.deckBtn} onPress={onToggle}>
+			<Text style={styles.deckTxt}>{bm ? 'Bookmarked' : 'Bookmark'}</Text>
+		</Pressable>
+	);
+}
+
+function NoteButton({ surah, ayah }: { surah: number; ayah: number }) {
+	const [saved, setSaved] = useState(false);
+	const onAdd = async () => { await addNote(surah, ayah, 'Note'); setSaved(true); setTimeout(() => setSaved(false), 1200); };
+	return (
+		<Pressable style={styles.deckBtn} onPress={onAdd}>
+			<Text style={styles.deckTxt}>{saved ? 'Saved' : 'Add Note'}</Text>
 		</Pressable>
 	);
 }
