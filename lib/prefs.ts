@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
 export type ThemeName = 'dark' | 'amoled';
 export type ReciterId = 'Alafasy_128kbps' | 'Husary_128kbps';
@@ -20,7 +20,7 @@ export const usePrefs = create<PrefsState>()(
 			setTheme: (theme) => set({ theme }),
 			setReciter: (reciter) => set({ reciter }),
 		}),
-		{ name: 'app.prefs.v1', getStorage: () => AsyncStorage as any }
+		{ name: 'app.prefs.v1', storage: createJSONStorage(() => AsyncStorage) }
 	)
 );
 
