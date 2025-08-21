@@ -3,11 +3,13 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { GlassCard } from '../components/GlassCard';
 import { LanguageToggle } from '../components/LanguageToggle';
 import { useTranslation } from 'react-i18next';
+import { Pulse } from '../components/Pulse';
 
 export default function HomeScreen() {
 	const { t } = useTranslation();
 	return (
 		<View style={styles.container}>
+			<Pulse />
 			<View style={styles.header}>
 				<Text style={styles.title}>Madarasa Quran</Text>
 				<LanguageToggle />
