@@ -1,7 +1,12 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { usePrefs } from '../lib/prefs';
 
 export function GradientBackground() {
+	const theme = usePrefs((s) => s.theme);
+	if (theme === 'amoled') {
+		return <View style={[StyleSheet.absoluteFill, { backgroundColor: '#000' }]} />;
+	}
 	return (
 		<LinearGradient
 			colors={["#0F2027", "#203A43", "#2C5364"]}
