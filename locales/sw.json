@@ -1,0 +1,14 @@
+{
+	"home": {
+		"learn_and_memorize": "Jifunze na kuhifadhi Qurani",
+		"tagline": "Maana kwa neno, sauti, na mazoezi",
+		"browse_surahs": "Angalia Sura"
+	},
+	"surah": {
+		"title": "Sura",
+		"subtitle": "Gusa aya kusikiliza na kujifunza"
+	},
+	"ayah": {
+		"vocab_placeholder": "Msamiati na sarufi vinakuja hivi karibuni"
+	}
+}

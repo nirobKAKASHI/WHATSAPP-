@@ -1,0 +1,14 @@
+{
+	"home": {
+		"learn_and_memorize": "Learn and memorize the Quran",
+		"tagline": "Word-by-word meaning, audio, and drills",
+		"browse_surahs": "Browse Surahs"
+	},
+	"surah": {
+		"title": "Surahs",
+		"subtitle": "Tap any verse to play and study"
+	},
+	"ayah": {
+		"vocab_placeholder": "Vocabulary and grammar coming soon"
+	}
+}
