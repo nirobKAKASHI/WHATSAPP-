@@ -8,6 +8,7 @@ export default function TabsLayout() {
 			<Tabs.Screen name="memorize/index" options={{ title: 'Memorize' }} />
 			<Tabs.Screen name="vocab/index" options={{ title: 'Vocab' }} />
 			<Tabs.Screen name="settings/index" options={{ title: 'Settings' }} />
+			<Tabs.Screen name="search/index" options={{ title: 'Search' }} />
 		</Tabs>
 	);
 }

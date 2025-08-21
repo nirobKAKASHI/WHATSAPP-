@@ -6,6 +6,7 @@ import { AudioControls } from '../../components/AudioControls';
 import { GlassCard } from '../../components/GlassCard';
 import { useTranslation } from 'react-i18next';
 import { addAyahCard } from '../../lib/srs';
+import { downloadAyah, getLocalUriIfExists, removeAyah } from '../../lib/downloads';
 
 export default function SurahScreen() {
 	const params = useLocalSearchParams<{ id: string }>();
@@ -46,6 +47,7 @@ export default function SurahScreen() {
 								<Pressable style={styles.deckBtn} onPress={() => addAyahCard(surahNumber, item.numberInSurah)}>
 									<Text style={styles.deckTxt}>Add to Deck</Text>
 								</Pressable>
+								<DownloadToggle surah={surahNumber} ayah={item.numberInSurah} />
 								<AudioControls surah={surahNumber} ayah={item.numberInSurah} />
 							</View>
 						</View>
@@ -56,6 +58,20 @@ export default function SurahScreen() {
 				)}
 			/>
 		</View>
+	);
+}
+
+function DownloadToggle({ surah, ayah }: { surah: number; ayah: number }) {
+	const [has, setHas] = useState<boolean | null>(null);
+	useEffect(() => { (async () => setHas(!!(await getLocalUriIfExists(surah, ayah))))(); }, [surah, ayah]);
+	const onToggle = async () => {
+		if (has) { await removeAyah(surah, ayah); setHas(false); }
+		else { await downloadAyah(surah, ayah); setHas(true); }
+	};
+	return (
+		<Pressable style={styles.deckBtn} onPress={onToggle}>
+			<Text style={styles.deckTxt}>{has ? 'Remove' : 'Download'}</Text>
+		</Pressable>
 	);
 }
 

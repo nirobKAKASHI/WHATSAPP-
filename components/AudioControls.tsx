@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { View, Pressable, Text, StyleSheet } from 'react-native';
 import { Audio, AVPlaybackStatusSuccess } from 'expo-av';
 import { getAyahAudioUrl } from '../lib/audio';
+import { getLocalUriIfExists } from '../lib/downloads';
 
 type Props = { surah: number; ayah: number };
 
@@ -14,11 +15,15 @@ export function AudioControls({ surah, ayah }: Props) {
 		return () => { if (soundRef.current) soundRef.current.unloadAsync(); };
 	}, []);
 
-	const getUrl = () => getAyahAudioUrl(surah, ayah);
+	const getUrl = async () => {
+		const local = await getLocalUriIfExists(surah, ayah);
+		return local ?? getAyahAudioUrl(surah, ayah);
+	};
 
 	const onPlayPause = async () => {
 		if (!soundRef.current) {
-			const { sound } = await Audio.Sound.createAsync({ uri: getUrl() }, { shouldPlay: true, rate });
+			const src = await getUrl();
+			const { sound } = await Audio.Sound.createAsync({ uri: src }, { shouldPlay: true, rate });
 			soundRef.current = sound;
 			setIsPlaying(true);
 			return;
