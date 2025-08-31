@@ -1,77 +1,85 @@
-const axios = require('axios');
-
-const ANIMU_BASE = 'https://api.some-random-api.com/animu';
-
-function normalizeType(input) {
-    const lower = (input || '').toLowerCase();
-    if (lower === 'facepalm' || lower === 'face_palm') return 'face-palm';
-    if (lower === 'quote' || lower === 'animu-quote' || lower === 'animuquote') return 'quote';
-    return lower;
-}
-
-async function sendAnimu(sock, chatId, message, type) {
-    const endpoint = `${ANIMU_BASE}/${type}`;
-    const res = await axios.get(endpoint);
-    const data = res.data || {};
-
-    // Prefer link (gif/image). Fallback to text quote if available
-    if (data.link) {
-        await sock.sendMessage(
-            chatId,
-            { image: { url: data.link }, caption: `anime: ${type}` },
-            { quoted: message }
-        );
-        return;
-    }
-    if (data.quote) {
-        await sock.sendMessage(
-            chatId,
-            { text: data.quote },
-            { quoted: message }
-        );
-        return;
-    }
-
-    await sock.sendMessage(
-        chatId,
-        { text: '❌ Failed to fetch animu.' },
-        { quoted: message }
-    );
-}
+const axios = require("axios");
 
 async function animeCommand(sock, chatId, message, args) {
-    const subArg = args && args[0] ? args[0] : '';
-    const sub = normalizeType(subArg);
-
-    const supported = [
-        'nom', 'poke', 'cry', 'kiss', 'pat', 'hug', 'wink', 'face-palm', 'quote'
-    ];
+    const query = args && args.length ? args.join(" ") : "";
+    if (!query) {
+        await sock.sendMessage(
+            chatId,
+            { text: "📺 Usage: .anime <name>\n> ex: .anime solo leveling" },
+            { quoted: message }
+        );
+        return;
+    }
 
     try {
-        if (!sub) {
-            // Fetch supported types from API for dynamic help
-            try {
-                const res = await axios.get(ANIMU_BASE);
-                const apiTypes = res.data && res.data.types ? res.data.types.map(s => s.replace('/animu/', '')).join(', ') : supported.join(', ');
-                await sock.sendMessage(chatId, { text: `Usage: .animu <type>\nTypes: ${apiTypes}` }, { quoted: message });
-            } catch {
-                await sock.sendMessage(chatId, { text: `Usage: .animu <type>\nTypes: ${supported.join(', ')}` }, { quoted: message });
-            }
+        const res = await axios.get(
+            `https://api.jikan.moe/v4/anime?q=${encodeURIComponent(query)}&limit=1`
+        );
+        const json = res.data;
+
+        if (!json.data?.length) {
+            await sock.sendMessage(
+                chatId,
+                { text: "❌ Anime not found." },
+                { quoted: message }
+            );
             return;
         }
 
-        if (!supported.includes(sub)) {
-            await sock.sendMessage(chatId, { text: `❌ Unsupported type: ${sub}. Try one of: ${supported.join(', ')}` }, { quoted: message });
-            return;
-        }
+        const ani = json.data[0];
 
-        await sendAnimu(sock, chatId, message, sub);
+        // Format date
+        const airedFrom = ani.aired?.from
+            ? new Date(ani.aired.from).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+              })
+            : "?";
+        const airedTo = ani.aired?.to
+            ? new Date(ani.aired.to).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+              })
+            : "Present";
+
+        const caption = `
+> 📺 *${ani.title}*
+> 🌐 *ᴀʟɪᴀꜱ*: ${[ani.title_english, ani.title_synonyms?.join(", "), ani.title_japanese].filter(Boolean).join(" / ") || "-"}
+> 🎬 *ᴛʏᴘᴇ*: ${ani.type || "-"}
+> 📊 *ꜱᴄᴏʀᴇ*: ${ani.score || "-"} (by ${ani.scored_by?.toLocaleString() || "?"} users)
+> ⭐ *ʀᴀɴᴋ*: ${ani.rank || "-"} | *ᴘᴏᴘᴜʟᴀʀɪᴛʏ*: ${ani.popularity || "-"}
+> 📦 *ᴇᴘɪꜱᴏᴅᴇꜱ*: ${ani.episodes || "?"}
+> ⏱️ *ᴅᴜʀᴀᴛɪᴏɴ*: ${ani.duration || "-"}
+> 🎭 *ɢᴇɴʀᴇꜱ*: ${ani.genres?.map((g) => g.name).join(", ") || "-"}
+> 🎥 *ꜱᴛᴜᴅɪᴏꜱ*: ${ani.studios?.map((s) => s.name).join(", ") || "-"}
+> 📆 *ꜱᴛᴀᴛᴜꜱ*: ${ani.status || "-"}
+> 🗓️ *ᴀɪʀᴇᴅ*: ${airedFrom} → ${airedTo}
+> 👥 *ᴍᴇᴍʙᴇʀꜱ*: ${ani.members?.toLocaleString() || "-"}
+> ❤️ *ꜰᴀᴠᴏʀɪᴛᴇꜱ*: ${ani.favorites?.toLocaleString() || "-"}
+> ━━━━━━━━━━━━━━━━━━
+> 📝 *ꜱʏɴᴏᴘꜱɪꜱ*:
+${ani.synopsis ? ani.synopsis.substring(0, 600) + (ani.synopsis.length > 600 ? "..." : "") : "No synopsis available."}
+> 🔗 ${ani.url}
+        `.trim();
+
+        await sock.sendMessage(
+            chatId,
+            {
+                image: { url: ani.images?.jpg?.large_image_url || ani.images?.jpg?.image_url },
+                caption,
+            },
+            { quoted: message }
+        );
     } catch (err) {
-        console.error('Error in animu command:', err);
-        await sock.sendMessage(chatId, { text: '❌ An error occurred while fetching animu.' }, { quoted: message });
+        console.error("Error in anime command:", err);
+        await sock.sendMessage(
+            chatId,
+            { text: "❌ An error occurred while fetching anime info." },
+            { quoted: message }
+        );
     }
 }
 
 module.exports = { animeCommand };
-
-
