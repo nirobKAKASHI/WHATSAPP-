@@ -183,7 +183,7 @@ This project is licensed under the MIT License. However, you must:
 - Credit original authors  
 - Not use for spam or malicious purposes  
 
-## 📜 Copyright
+## 📜 Copyright Notice
 
 Copyright (c) 2024 Navida Wijesuriya. All rights reserved.
 
